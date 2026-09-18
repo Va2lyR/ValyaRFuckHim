@@ -7,7 +7,7 @@ A PowerShell GUI toolkit that bundles 100+ open-source forensic, analysis, and s
 Open PowerShell as **Admin** and paste:
 
 ```powershell
-irm https://raw.githubusercontent.com/Va2lyR/ValyaRFuckHim/main/ValyaRFuckHim.ps1 -OutFile "$env:TEMP\ValyaRFuckHim.ps1"; powershell -ExecutionPolicy Bypass -File "$env:TEMP\ValyaRFuckHim.ps1"
+irm 'https://raw.githubusercontent.com/Va2lyR/ValyaRFuckHim/refs/heads/main/ValyaRFuckHim.ps1' -OutFile "$env:TEMP\vrfh.ps1"; powershell -ExecutionPolicy Bypass -File "$env:TEMP\vrfh.ps1"
 ```
 
 ## Features
