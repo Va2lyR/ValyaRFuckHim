@@ -14,7 +14,8 @@ Add-Type -AssemblyName System.Windows.Forms
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $installDir = "$env:USERPROFILE\Downloads\ValyaRFuckHim"
-$logoPath = Join-Path $PSScriptRoot "logo.jpg"
+$scriptDir = if ($PSScriptRoot) { $PSScriptRoot } else { $installDir }
+$logoPath = Join-Path $scriptDir "logo.jpg"
 
 
 # TOOL DATA
