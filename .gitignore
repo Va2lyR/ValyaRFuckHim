@@ -1,0 +1,23 @@
+# Downloaded tool binaries
+*.exe
+*.dll
+*.zip
+
+# Tool output directories (cached downloads)
+Clients Detector/**/
+Orbdiff/**/
+Other-Analysis/**/
+Other-Orbdiff/**/
+Other-Others/**/
+Other-RedLotus/**/
+Other-Tonynoh/**/
+Praiselily/**/
+
+# Keep directory structure but not contents
+!**/.gitkeep
+
+# Misc
+*.log
+*.tmp
+Thumbs.db
+Desktop.ini
