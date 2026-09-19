@@ -509,24 +509,32 @@ if (-not $script:disclaimerAccepted) { exit }
                                         <TextBlock Text="GitHub: Va2lyR" FontSize="9" Foreground="#555555" Margin="0,2,0,0"/>
                                     </StackPanel>
                                 </Border>
+                                <Border Background="{StaticResource Surface}" Margin="10,3" Padding="12,8" CornerRadius="10">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="120"/>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,6">
+                                            <Border Background="#E53935" Width="5" Height="5" CornerRadius="2.5" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                            <TextBlock Text="LOG" FontSize="8" FontWeight="SemiBold" Foreground="#444444" FontFamily="Consolas" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <TextBox x:Name="LogBox" Grid.Row="1" Background="#0A0A0A" Foreground="#E53935" BorderBrush="#1E1E1E" BorderThickness="1" FontFamily="Consolas" FontSize="9" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Padding="8,6" VerticalAlignment="Stretch"/>
+                                    </Grid>
+                                </Border>
                             </StackPanel>
                         </ScrollViewer>
                     </Grid>
                 </Border>
             </Grid>
 
-            <Border Grid.Row="2" Background="#0D0D0D" BorderBrush="{StaticResource Border}" BorderThickness="0,1,0,0" Padding="18,8">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                        <Border Background="#E53935" Width="5" Height="5" CornerRadius="2.5" Margin="0,0,8,0" VerticalAlignment="Center"/>
-                        <TextBlock Text="LOG" FontSize="8" FontWeight="SemiBold" Foreground="#444444" FontFamily="Consolas" VerticalAlignment="Center"/>
-                    </StackPanel>
-                    <TextBox x:Name="LogBox" Grid.Column="1" Background="Transparent" Foreground="#E53935" BorderThickness="0" FontFamily="Consolas" FontSize="10" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="12,0,0,0"/>
-                </Grid>
+            <Border Grid.Row="2" Background="#0D0D0D" BorderBrush="{StaticResource Border}" BorderThickness="0,1,0,0" Padding="18,6">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border Background="#E53935" Width="5" Height="5" CornerRadius="2.5" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="VALYAR" FontSize="9" FontWeight="SemiBold" Foreground="#555555" FontFamily="Consolas" VerticalAlignment="Center"/>
+                    <Border Background="#1E1E1E" Width="1" Height="12" Margin="12,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="v1.0" FontSize="9" Foreground="#333333" FontFamily="Consolas" VerticalAlignment="Center"/>
+                </StackPanel>
             </Border>
         </Grid>
     </Border>
@@ -556,12 +564,10 @@ $BtnAppwiz     = $window.FindName("BtnAppwiz")
 $BtnControlFolders = $window.FindName("BtnControlFolders")
 $BtnWinHistory = $window.FindName("BtnWinHistory")
 $BtnIndexedLoc = $window.FindName("BtnIndexedLoc")
-$InstPathBlock = $window.FindName("InstPathBlock")
 $LogoImage     = $window.FindName("LogoImage")
 
-$InstPathBlock.Text = "Install path:`n$installDir"
-
-# Load logo image
+# Load logo image - try local first, then download from GitHub
+$logoLoaded = $false
 if (Test-Path -LiteralPath $logoPath) {
     try {
         $bi = New-Object System.Windows.Media.Imaging.BitmapImage
@@ -571,6 +577,24 @@ if (Test-Path -LiteralPath $logoPath) {
         $bi.EndInit()
         $bi.Freeze()
         $LogoImage.Source = $bi
+        $logoLoaded = $true
+    } catch {}
+}
+if (-not $logoLoaded) {
+    try {
+        $logoUrl = "https://raw.githubusercontent.com/Va2lyR/ValyaRFuckHim/refs/heads/main/logo.jpg"
+        $tempLogo = "$env:TEMP\vrfh_logo.jpg"
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        (New-Object System.Net.WebClient).DownloadFile($logoUrl, $tempLogo)
+        if (Test-Path -LiteralPath $tempLogo) {
+            $bi = New-Object System.Windows.Media.Imaging.BitmapImage
+            $bi.BeginInit()
+            $bi.UriSource = New-Object System.Uri($tempLogo)
+            $bi.CacheOption = [System.Windows.Media.Imaging.BitmapCacheOption]::OnLoad
+            $bi.EndInit()
+            $bi.Freeze()
+            $LogoImage.Source = $bi
+        }
     } catch {}
 }
 
