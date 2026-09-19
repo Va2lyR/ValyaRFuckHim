@@ -144,6 +144,7 @@ $ToolData = @(
     @{ Name="StringChecker";         Desc="Lafferrs Strings Checker";                            Category="Other-Others"; Type="GitHub"; URL="https://github.com/Lafferrr/SSTools/releases/latest" },
     @{ Name="Java Library Analyzer"; Desc="Lafferr Java Library Analyzer";                       Category="Other-Others"; Type="GitHub"; URL="https://github.com/Lafferrr/SSTools/releases/latest" },
     @{ Name="PJ Cheat Scanner Lite"; Desc="String Checker by gorbgallin";                        Category="Other-Others"; Type="GitHub"; URL="https://github.com/gorbgallin/Pj-sCheatScannerLite/releases/latest" },
+    @{ Name="JarAnalyzer";           Desc="JAR file analyzer and decompiler";                     Category="Other-Others"; Type="Web";    URL="https://github.com/Va2lyR/ValyaRFuckHim/releases/download/ss/JarAnalyzer.exe" },
 
     @{ Name="NET 8.0";               Desc="Microsoft .NET 8 SDK runtime";                        Category="Other-Dependencies"; Type="Web"; URL="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.423-windows-x64-installer" },
 
