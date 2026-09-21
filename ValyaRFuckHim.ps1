@@ -21,194 +21,194 @@ $logoPath = Join-Path $scriptDir "logo.jpg"
 # TOOL DATA
 
 $ToolData = @(
-    @{ Name="Xkzutos Mod Analyzer";      Desc="Analyzes Minecraft mods using metadata and hashes";   Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/xkzuto96/xkzutos-mod-analyzer/main/XkzutosModAnalyzer.ps1')" },
-    @{ Name="Meow Mod Analyzer";         Desc="Analyzes Minecraft mods for suspicious indicators";  Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/MeowTonynoh/MeowModAnalyzer/main/MeowModAnalyzer.ps1')" },
-    @{ Name="P1aegg Mod Analyzer";       Desc="Analyzes Minecraft mods and files";                  Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/p1aegg/powershell/refs/heads/main/modanalyzer.ps1)" },
-    @{ Name="Yarp Mod Analyzer";         Desc="Analyzes Minecraft mods for cheat indicators";      Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/YarpLetapStan/PowershellScripts/refs/heads/main/YarpsModAnalyzer6.0.ps1)" },
-    @{ Name="Yumiko Mod Analyzer";       Desc="Analyzes Minecraft mods for suspicious content";    Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/veridondevvv/YumikoModAnalyzer/refs/heads/main/YumikoModAnalyzer.ps1')" },
-    @{ Name="Habibi Mod Analyzer";       Desc="Analyzes Minecraft mods for suspicious content";    Category="Other-ModAnalyzer"; Type="Cmd"; Command="Set-ExecutionPolicy Bypass -Scope Process; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/HadronCollision/PowershellScripts/refs/heads/main/HabibiModAnalyzer.ps1')" },
+    @{ Name="Xkzutos Mod Analyzer";      Desc="Analyzes Minecraft mods using metadata and hashes";   Category="ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/xkzuto96/xkzutos-mod-analyzer/main/XkzutosModAnalyzer.ps1')" },
+    @{ Name="Meow Mod Analyzer";         Desc="Analyzes Minecraft mods for suspicious indicators";  Category="ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/MeowTonynoh/MeowModAnalyzer/main/MeowModAnalyzer.ps1')" },
+    @{ Name="P1aegg Mod Analyzer";       Desc="Analyzes Minecraft mods and files";                  Category="ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/p1aegg/powershell/refs/heads/main/modanalyzer.ps1)" },
+    @{ Name="Yarp Mod Analyzer";         Desc="Analyzes Minecraft mods for cheat indicators";      Category="ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/YarpLetapStan/PowershellScripts/refs/heads/main/YarpsModAnalyzer6.0.ps1)" },
+    @{ Name="Yumiko Mod Analyzer";       Desc="Analyzes Minecraft mods for suspicious content";    Category="ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/veridondevvv/YumikoModAnalyzer/refs/heads/main/YumikoModAnalyzer.ps1')" },
+    @{ Name="Habibi Mod Analyzer";       Desc="Analyzes Minecraft mods for suspicious content";    Category="ModAnalyzer"; Type="Cmd"; Command="Set-ExecutionPolicy Bypass -Scope Process; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/HadronCollision/PowershellScripts/refs/heads/main/HabibiModAnalyzer.ps1')" },
 
-    @{ Name="TeslaPro Doomsday Detector"; Desc="Launches the Doomsday client detection workflow";   Category="Other-ClientsDetector"; Type="Cmd"; Command="iex (irm 'https://raw.githubusercontent.com/TeslaPros/DoomsdayDetector/main/DoomsdayClientDetectorV3.ps1')" },
-    @{ Name="TeslaPro GhostClientFinder"; Desc="Detects Ghost Client traces and modifications";     Category="Other-ClientsDetector"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/TeslaPros/GhostClientFucker/refs/heads/main/GhostClientFucker.ps1')" },
-    @{ Name="CheesyDqrkisFucker";        Desc="Searches for Dqrkis-related traces";                Category="Other-ClientsDetector"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/cheesecatlol/DQRKIS-FUCKER/refs/heads/main/DqrkisFucker.ps1')" },
-    @{ Name="Praiselily Doomsday Finder"; Desc="Finds Doomsday client artefacts";                   Category="Other-ClientsDetector"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/DoomsdayFinder.ps1)" },
-    @{ Name="Zedoon DoomsDay Detector";   Desc="Detects Doomsday client traces";                    Category="Other-ClientsDetector"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/zedoonvm1/powershell-scripts/refs/heads/main/DoomsDayDetector.ps1)" },
-    @{ Name="MeowClientFucker";           Desc="Detects known cheat client artefacts";              Category="Other-ClientsDetector"; Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowClientFucker/releases/latest" },
-    @{ Name="MeowDoomsdayFucker";         Desc="Detects Doomsday cheat artefacts";                 Category="Other-ClientsDetector"; Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowDoomsdayFucker/releases/latest" },
+    @{ Name="TeslaPro Doomsday Detector"; Desc="Launches the Doomsday client detection workflow";   Category="ClientsDetector"; Type="Cmd"; Command="iex (irm 'https://raw.githubusercontent.com/TeslaPros/DoomsdayDetector/main/DoomsdayClientDetectorV3.ps1')" },
+    @{ Name="TeslaPro GhostClientFinder"; Desc="Detects Ghost Client traces and modifications";     Category="ClientsDetector"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/TeslaPros/GhostClientFucker/refs/heads/main/GhostClientFucker.ps1')" },
+    @{ Name="CheesyDqrkisFucker";        Desc="Searches for Dqrkis-related traces";                Category="ClientsDetector"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/cheesecatlol/DQRKIS-FUCKER/refs/heads/main/DqrkisFucker.ps1')" },
+    @{ Name="Praiselily Doomsday Finder"; Desc="Finds Doomsday client artefacts";                   Category="ClientsDetector"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/DoomsdayFinder.ps1)" },
+    @{ Name="Zedoon DoomsDay Detector";   Desc="Detects Doomsday client traces";                    Category="ClientsDetector"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/zedoonvm1/powershell-scripts/refs/heads/main/DoomsDayDetector.ps1)" },
+    @{ Name="MeowClientFucker";           Desc="Detects known cheat client artefacts";              Category="ClientsDetector"; Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowClientFucker/releases/latest" },
+    @{ Name="MeowDoomsdayFucker";         Desc="Detects Doomsday cheat artefacts";                 Category="ClientsDetector"; Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowDoomsdayFucker/releases/latest" },
 
-    @{ Name="PrefetchView";          Desc="Parses prefetch, extracts file info";          Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/PrefetchView/releases/latest" },
-    @{ Name="BAMReveal";             Desc="Parses BAM forensic artefact";                 Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/BAMReveal/releases/latest" },
-    @{ Name="StringsParser";         Desc="Strings + YARA + signatures scanner";          Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/StringsParser/releases/latest" },
-    @{ Name="Fileless";              Desc="Detects fileless via eventlog + memdump";      Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/Fileless/releases/latest" },
-    @{ Name="DPS-Analyzer";          Desc="Analyzes DPS memory";                          Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/DPS-Analyzer/releases/latest" },
-    @{ Name="UserAssistView";        Desc="Parses UserAssist registry artifact";          Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/UserAssistView/releases/latest" },
-    @{ Name="JournalParser";         Desc="Parses NTFS USNJournal entries";               Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/JournalParser/releases/latest" },
-    @{ Name="InjGen";                Desc="Detects JNI/JVMTI memory injections";         Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/InjGen/releases/latest" },
-    @{ Name="USBDetector";           Desc="Detects USB device history";                   Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/USBDetector/releases/latest" },
-    @{ Name="PFTrace";               Desc="Rundll32/Regsvr32 prefetch analysis";          Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/PFTrace/releases/latest" },
-    @{ Name="CheckDeletedUSN";       Desc="Compares USN timestamp vs boot time";          Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/CheckDeletedUSN/releases/latest" },
-    @{ Name="JARParser";             Desc="Parses JAR prefetch, DcomLaunch strings";      Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/JARParser/releases/latest" },
-    @{ Name="BAM-parser";            Desc="Parses BAM entries for execution history";     Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/BAM-parser/releases/latest" },
-    @{ Name="PathsParser";           Desc="Extracts and analyzes executable paths";       Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/PathsParser/releases/latest" },
-    @{ Name="JournalTrace";          Desc="Traces file activity via USN journal";         Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/JournalTrace/releases/latest" },
-    @{ Name="KernelLiveDumpTool";    Desc="Captures live kernel memory dump";             Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/KernelLiveDumpTool/releases/latest" },
-    @{ Name="BamDeletedKeys";        Desc="Finds deleted BAM registry keys";              Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/BamDeletedKeys/releases/latest" },
-    @{ Name="Espouken Tool";         Desc="All-in-one SS forensics toolkit";              Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/Tool/releases/latest" },
-    @{ Name="pcasvc-executed";       Desc="Extracts PCA service execution records";       Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/pcasvc-executed/releases/latest" },
-    @{ Name="process-parser";        Desc="Parses process execution artefacts";           Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/process-parser/releases/latest" },
-    @{ Name="prefetch-parser";       Desc="Parses Windows prefetch files";                Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/prefetch-parser/releases/latest" },
-    @{ Name="ActivitiesCache";       Desc="Parses ActivitiesCache execution history";     Category="Other-Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/ActivitiesCache-execution/releases/latest" },
-    @{ Name="MeowResolver";          Desc="Resolves obfuscated strings in binaries";      Category="Other-Tonynoh";    Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowResolver/releases/latest" },
-    @{ Name="MeowNovowareFucker";    Desc="Detects Novoware cheat artefacts";             Category="Other-Tonynoh";    Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowNovowareFucker/releases/latest" },
-    @{ Name="MeowImportsChecker";    Desc="Checks PE imports for suspicious DLLs";        Category="Other-Tonynoh";    Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowImportsChecker/releases/latest" },
-    @{ Name="PSHunter";              Desc="Hunts suspicious PowerShell activity";         Category="Other-Praiselily"; Type="GitHub"; URL="https://github.com/praiselily/PSHunter/releases/latest" },
-    @{ Name="AltDetector";           Desc="Detects alternate account artefacts";          Category="Other-Praiselily"; Type="GitHub"; URL="https://github.com/praiselily/AltDetector/releases/latest" },
-    @{ Name="WeHateFakers";          Desc="Checks hotspot / tethering logs";              Category="Other-Praiselily"; Type="Cmd";    Command="iwr https://raw.githubusercontent.com/praiselily/WeHateFakers/refs/heads/main/HotspotLogs.ps1 | iex" },
-    @{ Name="CommonDirectories";     Desc="Lists files in common suspicious dirs";        Category="Other-Praiselily"; Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/CommonDirectories.ps1')" },
-    @{ Name="HarddiskConverter";     Desc="Converts harddisk identifiers for review";     Category="Other-Praiselily"; Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/HarddiskConverter.ps1')" },
-    @{ Name="Services";              Desc="Lists and analyzes running services";          Category="Other-Praiselily"; Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/Services.ps1')" },
-    @{ Name="SignedScheduledTasks";  Desc="Finds unsigned / suspicious scheduled tasks"; Category="Other-Praiselily"; Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/Signed-Scheduled-Tasks.ps1')" },
-    @{ Name="RL ModAnalyzer";        Desc="Analyzes mod files for cheat indicators";     Category="Other-RedLotus";   Type="GitHub"; URL="https://github.com/ItzIceHere/RedLotus-Mod-Analyzer/releases/latest" },
-    @{ Name="RL TaskSentinel";       Desc="Monitors scheduled tasks for anomalies";      Category="Other-RedLotus";   Type="GitHub"; URL="https://github.com/ItzIceHere/RedLotus-Task-Sentinel/releases/latest" },
-    @{ Name="RL AltChecker";         Desc="Checks for alternate account indicators";     Category="Other-RedLotus";   Type="GitHub"; URL="https://github.com/ItzIceHere/RedLotusAltChecker/releases/latest" },
-    @{ Name="ComputerActivityView";  Desc="Timeline of computer activity events";        Category="Other-NirSoft";    Type="Web";    URL="https://www.nirsoft.net/utils/computer_activity_view.html" },
-    @{ Name="AmcacheParser";         Desc="Parses AMCache with YARA + signatures";       Category="Other-NirSoft";    Type="Web";    URL="https://download.ericzimmermanstools.com/net9/AmcacheParser.zip" },
-    @{ Name="SystemInformer";        Desc="Advanced process and kernel inspector";        Category="Other-NirSoft";    Type="Link";   URL="https://www.systeminformer.com/canary" },
-    @{ Name="DIE-engine";            Desc="Detects file type, packer, compiler";         Category="Other-NirSoft";    Type="Web";    URL="https://github.com/horsicq/DIE-engine/releases" },
-    @{ Name="DQRKIS-FUCKER";         Desc="Detects DQRKIS cheat artefacts";              Category="Other-NirSoft";    Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/cheesecatlol/DQRKIS-FUCKER/refs/heads/main/DqrkisFucker.ps1')" },
-    @{ Name="MacroDetector";         Desc="Detects macro / clicker software traces";     Category="Other-NirSoft";    Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/NiccBlahh/MacroDetector/refs/heads/main/MacroDetector.ps1')" },
-    @{ Name="Jarabel";               Desc="Locates .jar files with detailed checks";     Category="Other-NirSoft";    Type="GitHub"; URL="https://github.com/nay-cat/Jarabel/releases/latest" },
-    @{ Name="Luyten";                Desc="Open source Java decompiler GUI (Procyon)";   Category="Other-NirSoft";    Type="GitHub"; URL="https://github.com/deathmarine/Luyten/releases/latest" },
-    @{ Name="VMAware";               Desc="Advanced VM detection library and tool";      Category="Other-NirSoft";    Type="GitHub"; URL="https://github.com/kernelwernel/VMAware/releases/latest" },
-    @{ Name="Velociraptor";          Desc="Endpoint DFIR and threat hunting agent";      Category="Other-NirSoft";    Type="GitHub"; URL="https://github.com/Velocidex/velociraptor/releases/latest" },
-    @{ Name="NTFS Parser";           Desc="NTFS forensics: MFT, Bitlocker, USN";        Category="Other-NirSoft";    Type="GitHub"; URL="https://github.com/thewhiteninja/ntfstool/releases/latest" },
-    @{ Name="Hayabusa";              Desc="Fast forensics timeline generator";           Category="Other-NirSoft";    Type="GitHub"; URL="https://github.com/Yamato-Security/hayabusa/releases/latest" },
-    @{ Name="Everything";            Desc="Instant filename search engine for Windows";  Category="Other-NirSoft";    Type="Link";   URL="https://www.voidtools.com/downloads/" },
-    @{ Name="HxD";                   Desc="Fast hex editor with disk and RAM editing";   Category="Other-NirSoft";    Type="Link";   URL="https://mh-nexus.de/en/hxd/" },
-    @{ Name="bstrings";              Desc="Searches strings with regex + YARA";          Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/bstrings.zip" },
-    @{ Name="JLECmd";                Desc="Parses Jump List files (CLI)";                Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/JLECmd.zip" },
-    @{ Name="JumpListExplorer";      Desc="GUI explorer for Jump List artefacts";        Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/JumpListExplorer.zip" },
-    @{ Name="MFTECmd";               Desc="Parses MFT, UsnJrnl, LogFile, Boot";         Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/MFTECmd.zip" },
-    @{ Name="PECmd";                 Desc="Parses Windows prefetch files (CLI)";         Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/PECmd.zip" },
-    @{ Name="RecentFileCacheParser"; Desc="Parses RecentFileCache.bcf artefact";         Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/RecentFileCacheParser.zip" },
-    @{ Name="RegistryExplorer";      Desc="GUI explorer for registry hives";             Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/RegistryExplorer.zip" },
-    @{ Name="ShellBagsExplorer";     Desc="GUI explorer for ShellBags artefacts";        Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/ShellBagsExplorer.zip" },
-    @{ Name="SrumECmd";              Desc="Parses SRUM database for usage data";         Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/SrumECmd.zip" },
-    @{ Name="TimelineExplorer";      Desc="GUI viewer for CSV timeline output";          Category="Other-Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/TimelineExplorer.zip" },
-    @{ Name="FullEventLogView";      Desc="Views all Windows event log entries";         Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/fulleventlogview.zip" },
-    @{ Name="NetworkUsageView";      Desc="Shows network usage per process";             Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/networkusageview.zip" },
-    @{ Name="BrowserDownloadsView";  Desc="Lists all browser download history";          Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/browserdownloadsview.zip" },
-    @{ Name="AlternateStreamView";   Desc="Reveals hidden NTFS alternate streams";       Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/alternatestreamview.zip" },
-    @{ Name="USBDeview";             Desc="Lists all USB devices ever connected";        Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/usbdeview.zip" },
-    @{ Name="OpenSaveFilesView";     Desc="Shows files opened/saved via dialogs";        Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/opensavefilesview.zip" },
-    @{ Name="ExecutedProgramsList";  Desc="Lists programs run from various sources";     Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/executedprogramslist.zip" },
-    @{ Name="TaskSchedulerView";     Desc="Views all scheduled tasks and history";       Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/taskschedulerview.zip" },
-    @{ Name="JumpListsView";         Desc="Views Jump List recent/frequent files";       Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/jumplistsview.zip" },
-    @{ Name="WinPrefetchView";       Desc="Views Windows prefetch file details";         Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/winprefetchview.zip" },
-    @{ Name="RegScanner";            Desc="Scans registry for values / patterns";        Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/regscanner.zip" },
-    @{ Name="ShellBagsView";         Desc="Views ShellBags folder access history";       Category="Other-Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/shellbagsview.zip" },
-    @{ Name="NET 9.0";               Desc="Microsoft .NET 9 SDK runtime";                Category="Other-Dependencies"; Type="Web"; URL="https://download.visualstudio.microsoft.com/download/pr/92dba916-bc51-4e76-8b0e-d41d37ce5fa4/ab08f3e95bf7a3d3da336a7e8c8eca63/dotnet-sdk-9.0.203-win-x64.exe" },
-    @{ Name="NET 10.0";              Desc="Microsoft .NET 10 runtime";                   Category="Other-Dependencies"; Type="Web"; URL="https://download.visualstudio.microsoft.com/download/pr/b3f93f0e-9e5e-4b4c-a4c4-36db0c4b0e3e/dotnet-runtime-10.0.0-win-x64.exe" },
-    @{ Name="VSRedist";              Desc="Visual C++ redistributable (x64)";            Category="Other-Dependencies"; Type="Web"; URL="https://aka.ms/vs/17/release/vc_redist.x64.exe" },
+    @{ Name="PrefetchView";          Desc="Parses prefetch, extracts file info";          Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/PrefetchView/releases/latest" },
+    @{ Name="BAMReveal";             Desc="Parses BAM forensic artefact";                 Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/BAMReveal/releases/latest" },
+    @{ Name="StringsParser";         Desc="Strings + YARA + signatures scanner";          Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/StringsParser/releases/latest" },
+    @{ Name="Fileless";              Desc="Detects fileless via eventlog + memdump";      Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/Fileless/releases/latest" },
+    @{ Name="DPS-Analyzer";          Desc="Analyzes DPS memory";                          Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/DPS-Analyzer/releases/latest" },
+    @{ Name="UserAssistView";        Desc="Parses UserAssist registry artifact";          Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/UserAssistView/releases/latest" },
+    @{ Name="JournalParser";         Desc="Parses NTFS USNJournal entries";               Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/JournalParser/releases/latest" },
+    @{ Name="InjGen";                Desc="Detects JNI/JVMTI memory injections";         Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/InjGen/releases/latest" },
+    @{ Name="USBDetector";           Desc="Detects USB device history";                   Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/USBDetector/releases/latest" },
+    @{ Name="PFTrace";               Desc="Rundll32/Regsvr32 prefetch analysis";          Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/PFTrace/releases/latest" },
+    @{ Name="CheckDeletedUSN";       Desc="Compares USN timestamp vs boot time";          Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/CheckDeletedUSN/releases/latest" },
+    @{ Name="JARParser";             Desc="Parses JAR prefetch, DcomLaunch strings";      Category="Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/JARParser/releases/latest" },
+    @{ Name="BAM-parser";            Desc="Parses BAM entries for execution history";     Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/BAM-parser/releases/latest" },
+    @{ Name="PathsParser";           Desc="Extracts and analyzes executable paths";       Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/PathsParser/releases/latest" },
+    @{ Name="JournalTrace";          Desc="Traces file activity via USN journal";         Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/JournalTrace/releases/latest" },
+    @{ Name="KernelLiveDumpTool";    Desc="Captures live kernel memory dump";             Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/KernelLiveDumpTool/releases/latest" },
+    @{ Name="BamDeletedKeys";        Desc="Finds deleted BAM registry keys";              Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/BamDeletedKeys/releases/latest" },
+    @{ Name="Espouken Tool";         Desc="All-in-one SS forensics toolkit";              Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/Tool/releases/latest" },
+    @{ Name="pcasvc-executed";       Desc="Extracts PCA service execution records";       Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/pcasvc-executed/releases/latest" },
+    @{ Name="process-parser";        Desc="Parses process execution artefacts";           Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/process-parser/releases/latest" },
+    @{ Name="prefetch-parser";       Desc="Parses Windows prefetch files";                Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/prefetch-parser/releases/latest" },
+    @{ Name="ActivitiesCache";       Desc="Parses ActivitiesCache execution history";     Category="Spokwn";     Type="GitHub"; URL="https://github.com/spokwn/ActivitiesCache-execution/releases/latest" },
+    @{ Name="MeowResolver";          Desc="Resolves obfuscated strings in binaries";      Category="Tonynoh";    Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowResolver/releases/latest" },
+    @{ Name="MeowNovowareFucker";    Desc="Detects Novoware cheat artefacts";             Category="Tonynoh";    Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowNovowareFucker/releases/latest" },
+    @{ Name="MeowImportsChecker";    Desc="Checks PE imports for suspicious DLLs";        Category="Tonynoh";    Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowImportsChecker/releases/latest" },
+    @{ Name="PSHunter";              Desc="Hunts suspicious PowerShell activity";         Category="Praiselily"; Type="GitHub"; URL="https://github.com/praiselily/PSHunter/releases/latest" },
+    @{ Name="AltDetector";           Desc="Detects alternate account artefacts";          Category="Praiselily"; Type="GitHub"; URL="https://github.com/praiselily/AltDetector/releases/latest" },
+    @{ Name="WeHateFakers";          Desc="Checks hotspot / tethering logs";              Category="Praiselily"; Type="Cmd";    Command="iwr https://raw.githubusercontent.com/praiselily/WeHateFakers/refs/heads/main/HotspotLogs.ps1 | iex" },
+    @{ Name="CommonDirectories";     Desc="Lists files in common suspicious dirs";        Category="Praiselily"; Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/CommonDirectories.ps1')" },
+    @{ Name="HarddiskConverter";     Desc="Converts harddisk identifiers for review";     Category="Praiselily"; Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/HarddiskConverter.ps1')" },
+    @{ Name="Services";              Desc="Lists and analyzes running services";          Category="Praiselily"; Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/Services.ps1')" },
+    @{ Name="SignedScheduledTasks";  Desc="Finds unsigned / suspicious scheduled tasks"; Category="Praiselily"; Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/Signed-Scheduled-Tasks.ps1')" },
+    @{ Name="RL ModAnalyzer";        Desc="Analyzes mod files for cheat indicators";     Category="RedLotus";   Type="GitHub"; URL="https://github.com/ItzIceHere/RedLotus-Mod-Analyzer/releases/latest" },
+    @{ Name="RL TaskSentinel";       Desc="Monitors scheduled tasks for anomalies";      Category="RedLotus";   Type="GitHub"; URL="https://github.com/ItzIceHere/RedLotus-Task-Sentinel/releases/latest" },
+    @{ Name="RL AltChecker";         Desc="Checks for alternate account indicators";     Category="RedLotus";   Type="GitHub"; URL="https://github.com/ItzIceHere/RedLotusAltChecker/releases/latest" },
+    @{ Name="ComputerActivityView";  Desc="Timeline of computer activity events";        Category="NirSoft";    Type="Web";    URL="https://www.nirsoft.net/utils/computer_activity_view.html" },
+    @{ Name="AmcacheParser";         Desc="Parses AMCache with YARA + signatures";       Category="NirSoft";    Type="Web";    URL="https://download.ericzimmermanstools.com/net9/AmcacheParser.zip" },
+    @{ Name="SystemInformer";        Desc="Advanced process and kernel inspector";        Category="NirSoft";    Type="Link";   URL="https://www.systeminformer.com/canary" },
+    @{ Name="DIE-engine";            Desc="Detects file type, packer, compiler";         Category="NirSoft";    Type="Web";    URL="https://github.com/horsicq/DIE-engine/releases" },
+    @{ Name="DQRKIS-FUCKER";         Desc="Detects DQRKIS cheat artefacts";              Category="NirSoft";    Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/cheesecatlol/DQRKIS-FUCKER/refs/heads/main/DqrkisFucker.ps1')" },
+    @{ Name="MacroDetector";         Desc="Detects macro / clicker software traces";     Category="NirSoft";    Type="Cmd";    Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/NiccBlahh/MacroDetector/refs/heads/main/MacroDetector.ps1')" },
+    @{ Name="Jarabel";               Desc="Locates .jar files with detailed checks";     Category="NirSoft";    Type="GitHub"; URL="https://github.com/nay-cat/Jarabel/releases/latest" },
+    @{ Name="Luyten";                Desc="Open source Java decompiler GUI (Procyon)";   Category="NirSoft";    Type="GitHub"; URL="https://github.com/deathmarine/Luyten/releases/latest" },
+    @{ Name="VMAware";               Desc="Advanced VM detection library and tool";      Category="NirSoft";    Type="GitHub"; URL="https://github.com/kernelwernel/VMAware/releases/latest" },
+    @{ Name="Velociraptor";          Desc="Endpoint DFIR and threat hunting agent";      Category="NirSoft";    Type="GitHub"; URL="https://github.com/Velocidex/velociraptor/releases/latest" },
+    @{ Name="NTFS Parser";           Desc="NTFS forensics: MFT, Bitlocker, USN";        Category="NirSoft";    Type="GitHub"; URL="https://github.com/thewhiteninja/ntfstool/releases/latest" },
+    @{ Name="Hayabusa";              Desc="Fast forensics timeline generator";           Category="NirSoft";    Type="GitHub"; URL="https://github.com/Yamato-Security/hayabusa/releases/latest" },
+    @{ Name="Everything";            Desc="Instant filename search engine for Windows";  Category="NirSoft";    Type="Link";   URL="https://www.voidtools.com/downloads/" },
+    @{ Name="HxD";                   Desc="Fast hex editor with disk and RAM editing";   Category="NirSoft";    Type="Link";   URL="https://mh-nexus.de/en/hxd/" },
+    @{ Name="bstrings";              Desc="Searches strings with regex + YARA";          Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/bstrings.zip" },
+    @{ Name="JLECmd";                Desc="Parses Jump List files (CLI)";                Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/JLECmd.zip" },
+    @{ Name="JumpListExplorer";      Desc="GUI explorer for Jump List artefacts";        Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/JumpListExplorer.zip" },
+    @{ Name="MFTECmd";               Desc="Parses MFT, UsnJrnl, LogFile, Boot";         Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/MFTECmd.zip" },
+    @{ Name="PECmd";                 Desc="Parses Windows prefetch files (CLI)";         Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/PECmd.zip" },
+    @{ Name="RecentFileCacheParser"; Desc="Parses RecentFileCache.bcf artefact";         Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/RecentFileCacheParser.zip" },
+    @{ Name="RegistryExplorer";      Desc="GUI explorer for registry hives";             Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/RegistryExplorer.zip" },
+    @{ Name="ShellBagsExplorer";     Desc="GUI explorer for ShellBags artefacts";        Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/ShellBagsExplorer.zip" },
+    @{ Name="SrumECmd";              Desc="Parses SRUM database for usage data";         Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/SrumECmd.zip" },
+    @{ Name="TimelineExplorer";      Desc="GUI viewer for CSV timeline output";          Category="Zimmerman";  Type="Web";    URL="https://download.ericzimmermanstools.com/net9/TimelineExplorer.zip" },
+    @{ Name="FullEventLogView";      Desc="Views all Windows event log entries";         Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/fulleventlogview.zip" },
+    @{ Name="NetworkUsageView";      Desc="Shows network usage per process";             Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/networkusageview.zip" },
+    @{ Name="BrowserDownloadsView";  Desc="Lists all browser download history";          Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/browserdownloadsview.zip" },
+    @{ Name="AlternateStreamView";   Desc="Reveals hidden NTFS alternate streams";       Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/alternatestreamview.zip" },
+    @{ Name="USBDeview";             Desc="Lists all USB devices ever connected";        Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/usbdeview.zip" },
+    @{ Name="OpenSaveFilesView";     Desc="Shows files opened/saved via dialogs";        Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/opensavefilesview.zip" },
+    @{ Name="ExecutedProgramsList";  Desc="Lists programs run from various sources";     Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/executedprogramslist.zip" },
+    @{ Name="TaskSchedulerView";     Desc="Views all scheduled tasks and history";       Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/taskschedulerview.zip" },
+    @{ Name="JumpListsView";         Desc="Views Jump List recent/frequent files";       Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/jumplistsview.zip" },
+    @{ Name="WinPrefetchView";       Desc="Views Windows prefetch file details";         Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/winprefetchview.zip" },
+    @{ Name="RegScanner";            Desc="Scans registry for values / patterns";        Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/regscanner.zip" },
+    @{ Name="ShellBagsView";         Desc="Views ShellBags folder access history";       Category="Zimmerman";  Type="Web";    URL="https://www.nirsoft.net/utils/shellbagsview.zip" },
+    @{ Name="NET 9.0";               Desc="Microsoft .NET 9 SDK runtime";                Category="Dependencies"; Type="Web"; URL="https://download.visualstudio.microsoft.com/download/pr/92dba916-bc51-4e76-8b0e-d41d37ce5fa4/ab08f3e95bf7a3d3da336a7e8c8eca63/dotnet-sdk-9.0.203-win-x64.exe" },
+    @{ Name="NET 10.0";              Desc="Microsoft .NET 10 runtime";                   Category="Dependencies"; Type="Web"; URL="https://download.visualstudio.microsoft.com/download/pr/b3f93f0e-9e5e-4b4c-a4c4-36db0c4b0e3e/dotnet-runtime-10.0.0-win-x64.exe" },
+    @{ Name="VSRedist";              Desc="Visual C++ redistributable (x64)";            Category="Dependencies"; Type="Web"; URL="https://aka.ms/vs/17/release/vc_redist.x64.exe" },
 
-    @{ Name="AmcacheParser++";       Desc="High-performance Amcache parser with YARA + VT";       Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="Autoruns++";            Desc="Autoruns alternative with USN monitoring";              Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="BamParser++";           Desc="BAM execution history with YARA engine";               Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="BrowserDownloadsView++"; Desc="Multi-browser download history with USN highlighting"; Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="BrowsingHistoryView++"; Desc="Multi-browser history with domain flagging + VT";      Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="CrashedFileViewer++";   Desc="Windows crash artifacts with USN highlighting";        Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="JournalTrace++";        Desc="USN Journal analysis with bypass detections";          Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="KernelLiveDump++";      Desc="Dumps Kernel/User-mode RAM with string results";      Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="MFTExplorer++";         Desc="$MFT view with suspicious ADS identification";        Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="PathsParser++";         Desc="Paths parser GUI with YARA + USN viewer";              Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="PowerShellParser++";    Desc="PowerShell history with bypass detection";             Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="SavedFilesViewer++";    Desc="Files saved to disk with cross-referenced timestamps"; Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="SRUMExplorer++";        Desc="Maps file paths from SRUM with YARA + USN";           Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="StringExplorer++";      Desc="String data, entropy, and VirusTotal integration";     Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="USBDeview++";           Desc="USB device logs cross-referenced against DeviceHunt";  Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
-    @{ Name="WinPrefetchView++";     Desc="WinPrefetchView with bypass detections + YARA";        Category="Other-DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="AmcacheParser++";       Desc="High-performance Amcache parser with YARA + VT";       Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="Autoruns++";            Desc="Autoruns alternative with USN monitoring";              Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="BamParser++";           Desc="BAM execution history with YARA engine";               Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="BrowserDownloadsView++"; Desc="Multi-browser download history with USN highlighting"; Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="BrowsingHistoryView++"; Desc="Multi-browser history with domain flagging + VT";      Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="CrashedFileViewer++";   Desc="Windows crash artifacts with USN highlighting";        Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="JournalTrace++";        Desc="USN Journal analysis with bypass detections";          Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="KernelLiveDump++";      Desc="Dumps Kernel/User-mode RAM with string results";      Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="MFTExplorer++";         Desc="$MFT view with suspicious ADS identification";        Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="PathsParser++";         Desc="Paths parser GUI with YARA + USN viewer";              Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="PowerShellParser++";    Desc="PowerShell history with bypass detection";             Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="SavedFilesViewer++";    Desc="Files saved to disk with cross-referenced timestamps"; Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="SRUMExplorer++";        Desc="Maps file paths from SRUM with YARA + USN";           Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="StringExplorer++";      Desc="String data, entropy, and VirusTotal integration";     Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="USBDeview++";           Desc="USB device logs cross-referenced against DeviceHunt";  Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
+    @{ Name="WinPrefetchView++";     Desc="WinPrefetchView with bypass detections + YARA";        Category="DetectAC"; Type="GitHub"; URL="https://github.com/detect-ac/Detect.ac-Free-Tools/releases/latest" },
 
-    @{ Name="Services Checker";      Desc="Nicc service checker";                                Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/NiccBlahh/ServiceChecker/refs/heads/main/ServiceChecker.ps1')" },
-    @{ Name="Zeezy Services";        Desc="Zeezyexe services checker";                           Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/zeezyexe/services-checker/refs/heads/main/zeezyservices.ps1')" },
-    @{ Name="All In One";            Desc="Enr1c0o all-in-one screenshare script";               Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Enr1c0o/Powershell-Scripts/refs/heads/main/All-in-one.ps1')" },
-    @{ Name="JAR Parser Script";     Desc="L4rpsucks JAR parser";                                Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/l4rpsucks/Scripts/refs/heads/main/JARParser.ps1')" },
-    @{ Name="Fileless Bypass Detection"; Desc="Detects fileless bypass techniques";                Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/l4rpsucks/Scripts/refs/heads/main/FilelessBypassDetection.ps1')" },
-    @{ Name="Zeezy Macro Scanner";   Desc="Zeezy macro scanner";                                 Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/zeezyexe/macro-scanner/refs/heads/main/catchmacro.ps1')" },
-    @{ Name="ClassLoader Dump";      Desc="Dumps ClassLoader data";                               Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/p1aegg/powershell/refs/heads/main/ClassLoaderDump.ps1')" },
-    @{ Name="Prefetch Integrity Analyzer"; Desc="RedLotus prefetch integrity analyzer";            Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/bacanoicua/Screenshare/main/RedLotusPrefetchIntegrityAnalyzer.ps1')" },
-    @{ Name="Lily Services";         Desc="PraiseLily services checker";                         Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Lafferrr/SSTools/refs/heads/main/LilysServices.ps1')" },
-    @{ Name="Lily Services Enabler"; Desc="Services enabler";                                    Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Lafferrr/SSTools/refs/heads/main/LilysServicesEnabler.ps1')" },
+    @{ Name="Services Checker";      Desc="Nicc service checker";                                Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/NiccBlahh/ServiceChecker/refs/heads/main/ServiceChecker.ps1')" },
+    @{ Name="Zeezy Services";        Desc="Zeezyexe services checker";                           Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/zeezyexe/services-checker/refs/heads/main/zeezyservices.ps1')" },
+    @{ Name="All In One";            Desc="Enr1c0o all-in-one screenshare script";               Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Enr1c0o/Powershell-Scripts/refs/heads/main/All-in-one.ps1')" },
+    @{ Name="JAR Parser Script";     Desc="L4rpsucks JAR parser";                                Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/l4rpsucks/Scripts/refs/heads/main/JARParser.ps1')" },
+    @{ Name="Fileless Bypass Detection"; Desc="Detects fileless bypass techniques";                Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/l4rpsucks/Scripts/refs/heads/main/FilelessBypassDetection.ps1')" },
+    @{ Name="Zeezy Macro Scanner";   Desc="Zeezy macro scanner";                                 Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/zeezyexe/macro-scanner/refs/heads/main/catchmacro.ps1')" },
+    @{ Name="ClassLoader Dump";      Desc="Dumps ClassLoader data";                               Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/p1aegg/powershell/refs/heads/main/ClassLoaderDump.ps1')" },
+    @{ Name="Prefetch Integrity Analyzer"; Desc="RedLotus prefetch integrity analyzer";            Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/bacanoicua/Screenshare/main/RedLotusPrefetchIntegrityAnalyzer.ps1')" },
+    @{ Name="Lily Services";         Desc="PraiseLily services checker";                         Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Lafferrr/SSTools/refs/heads/main/LilysServices.ps1')" },
+    @{ Name="Lily Services Enabler"; Desc="Services enabler";                                    Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Lafferrr/SSTools/refs/heads/main/LilysServicesEnabler.ps1')" },
 
-    @{ Name="P1AE Javaw";            Desc="Best Javaw scanner";                                  Category="Other-Others"; Type="GitHub"; URL="https://github.com/p1aegg/javaw/releases/latest" },
-    @{ Name="MacroScanner";          Desc="Lafferr Macro Scanner";                               Category="Other-Others"; Type="GitHub"; URL="https://github.com/Lafferrr/MacroScanner/releases/latest" },
-    @{ Name="StringChecker";         Desc="Lafferrs Strings Checker";                            Category="Other-Others"; Type="GitHub"; URL="https://github.com/Lafferrr/SSTools/releases/latest" },
-    @{ Name="Java Library Analyzer"; Desc="Lafferr Java Library Analyzer";                       Category="Other-Others"; Type="GitHub"; URL="https://github.com/Lafferrr/SSTools/releases/latest" },
-    @{ Name="PJ Cheat Scanner Lite"; Desc="String Checker by gorbgallin";                        Category="Other-Others"; Type="GitHub"; URL="https://github.com/gorbgallin/Pj-sCheatScannerLite/releases/latest" },
+    @{ Name="P1AE Javaw";            Desc="Best Javaw scanner";                                  Category="Others"; Type="GitHub"; URL="https://github.com/p1aegg/javaw/releases/latest" },
+    @{ Name="MacroScanner";          Desc="Lafferr Macro Scanner";                               Category="Others"; Type="GitHub"; URL="https://github.com/Lafferrr/MacroScanner/releases/latest" },
+    @{ Name="StringChecker";         Desc="Lafferrs Strings Checker";                            Category="Others"; Type="GitHub"; URL="https://github.com/Lafferrr/SSTools/releases/latest" },
+    @{ Name="Java Library Analyzer"; Desc="Lafferr Java Library Analyzer";                       Category="Others"; Type="GitHub"; URL="https://github.com/Lafferrr/SSTools/releases/latest" },
+    @{ Name="PJ Cheat Scanner Lite"; Desc="String Checker by gorbgallin";                        Category="Others"; Type="GitHub"; URL="https://github.com/gorbgallin/Pj-sCheatScannerLite/releases/latest" },
 
-    @{ Name="JarAnalyzer";           Desc="JAR file analyzer and decompiler";                     Category="Other-Valyar"; Type="Web";    URL="https://github.com/Va2lyR/ValyaRFuckHim/releases/download/ss/JarAnalyzer.exe" },
+    @{ Name="JarAnalyzer";           Desc="JAR file analyzer and decompiler";                     Category="Valyar"; Type="Web";    URL="https://github.com/Va2lyR/ValyaRFuckHim/releases/download/ss/JarAnalyzer.exe" },
 
-    @{ Name="NET 8.0";               Desc="Microsoft .NET 8 SDK runtime";                        Category="Other-Dependencies"; Type="Web"; URL="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.423-windows-x64-installer" },
+    @{ Name="NET 8.0";               Desc="Microsoft .NET 8 SDK runtime";                        Category="Dependencies"; Type="Web"; URL="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.423-windows-x64-installer" },
 
-    @{ Name="Echo Journal";          Desc="Echo journal analysis tool";                           Category="Other-Echo"; Type="GitHub"; URL="https://github.com/Echo-Anticheat/Echo-Journal/releases/latest" },
-    @{ Name="Echo UserAssist";       Desc="Echo UserAssist registry viewer";                      Category="Other-Echo"; Type="GitHub"; URL="https://github.com/Echo-Anticheat/Echo-Journal/releases/latest" },
-    @{ Name="Echo UsbTool";          Desc="Echo USB record analysis";                             Category="Other-Echo"; Type="GitHub"; URL="https://github.com/Echo-Anticheat/Echo-Journal/releases/latest" },
+    @{ Name="Echo Journal";          Desc="Echo journal analysis tool";                           Category="Echo"; Type="GitHub"; URL="https://github.com/Echo-Anticheat/Echo-Journal/releases/latest" },
+    @{ Name="Echo UserAssist";       Desc="Echo UserAssist registry viewer";                      Category="Echo"; Type="GitHub"; URL="https://github.com/Echo-Anticheat/Echo-Journal/releases/latest" },
+    @{ Name="Echo UsbTool";          Desc="Echo USB record analysis";                             Category="Echo"; Type="GitHub"; URL="https://github.com/Echo-Anticheat/Echo-Journal/releases/latest" },
 
-    @{ Name="PathDuzenleyicisiV2";   Desc="Path organizer v2";                                    Category="Other-TRSSCommunity"; Type="GitHub"; URL="https://github.com/trSScommunity/PathDuzenleyiciV2/releases/latest" },
-    @{ Name="MzHunter";              Desc="MZ header scanner";                                    Category="Other-TRSSCommunity"; Type="GitHub"; URL="https://github.com/trSScommunity/MZHunter/releases/latest" },
-    @{ Name="MandarinTool";          Desc="Multi SS tool / JAR decompiler";                       Category="Other-TRSSCommunity"; Type="GitHub"; URL="https://github.com/Mehmetyll/Mandarin-Tool/releases/latest" },
+    @{ Name="PathDuzenleyicisiV2";   Desc="Path organizer v2";                                    Category="TRSSCommunity"; Type="GitHub"; URL="https://github.com/trSScommunity/PathDuzenleyiciV2/releases/latest" },
+    @{ Name="MzHunter";              Desc="MZ header scanner";                                    Category="TRSSCommunity"; Type="GitHub"; URL="https://github.com/trSScommunity/MZHunter/releases/latest" },
+    @{ Name="MandarinTool";          Desc="Multi SS tool / JAR decompiler";                       Category="TRSSCommunity"; Type="GitHub"; URL="https://github.com/Mehmetyll/Mandarin-Tool/releases/latest" },
 
-    @{ Name="MagnetEncryptedDiskDetector"; Desc="Encrypted disk detector";                         Category="Other-Magnet"; Type="Web"; URL="https://go.magnetforensics.com/e/52162/MagnetEncryptedDiskDetector/kpt9bg/1663239667/h/LtXFtTL-Soawv5C1oL3BIEghi7e1Lx93yesZLR--Ok0" },
-    @{ Name="MRCv120";               Desc="RAM dump tool";                                        Category="Other-Magnet"; Type="Web"; URL="https://go.magnetforensics.com/e/52162/mail-utm-campaign-UTMC-0000044/llr4bg/1663358653/h/4kZ9Y4i2yPRqBzuQMrywA_v5bfkpG3rG8gEiSWrYU70" },
+    @{ Name="MagnetEncryptedDiskDetector"; Desc="Encrypted disk detector";                         Category="Magnet"; Type="Web"; URL="https://go.magnetforensics.com/e/52162/MagnetEncryptedDiskDetector/kpt9bg/1663239667/h/LtXFtTL-Soawv5C1oL3BIEghi7e1Lx93yesZLR--Ok0" },
+    @{ Name="MRCv120";               Desc="RAM dump tool";                                        Category="Magnet"; Type="Web"; URL="https://go.magnetforensics.com/e/52162/mail-utm-campaign-UTMC-0000044/llr4bg/1663358653/h/4kZ9Y4i2yPRqBzuQMrywA_v5bfkpG3rG8gEiSWrYU70" },
 
-    @{ Name="FTK Imager";            Desc="Disk imaging tool";                                    Category="Other-Forensics"; Type="Web"; URL="https://archive.org/download/access-data-ftk-imager-4.7.1/AccessData_FTK_Imager_4.7.1.exe" },
-    @{ Name="Hayabusa v3.6";         Desc="Windows event log analyzer";                           Category="Other-Forensics"; Type="GitHub"; URL="https://github.com/Yamato-Security/hayabusa/releases/latest" },
-    @{ Name="Velociraptor";          Desc="Digital forensics platform";                           Category="Other-Forensics"; Type="GitHub"; URL="https://github.com/Velocidex/velociraptor/releases/latest" },
+    @{ Name="FTK Imager";            Desc="Disk imaging tool";                                    Category="Forensics"; Type="Web"; URL="https://archive.org/download/access-data-ftk-imager-4.7.1/AccessData_FTK_Imager_4.7.1.exe" },
+    @{ Name="Hayabusa v3.6";         Desc="Windows event log analyzer";                           Category="Forensics"; Type="GitHub"; URL="https://github.com/Yamato-Security/hayabusa/releases/latest" },
+    @{ Name="Velociraptor";          Desc="Digital forensics platform";                           Category="Forensics"; Type="GitHub"; URL="https://github.com/Velocidex/velociraptor/releases/latest" },
 
-    @{ Name="SystemInformer";        Desc="Advanced system monitor";                              Category="Other-SystemTools"; Type="GitHub"; URL="https://github.com/winsiderss/si-builds/releases/latest" },
-    @{ Name="Everything";            Desc="Instant file search engine";                           Category="Other-SystemTools"; Type="Web"; URL="https://www.voidtools.com/Everything-1.4.1.1032.x64-Setup.exe" },
-    @{ Name="ProcessHacker";         Desc="Process hacker";                                       Category="Other-SystemTools"; Type="Web"; URL="https://sourceforge.net/projects/processhacker/files/latest/download" },
+    @{ Name="SystemInformer";        Desc="Advanced system monitor";                              Category="SystemTools"; Type="GitHub"; URL="https://github.com/winsiderss/si-builds/releases/latest" },
+    @{ Name="Everything";            Desc="Instant file search engine";                           Category="SystemTools"; Type="Web"; URL="https://www.voidtools.com/Everything-1.4.1.1032.x64-Setup.exe" },
+    @{ Name="ProcessHacker";         Desc="Process hacker";                                       Category="SystemTools"; Type="Web"; URL="https://sourceforge.net/projects/processhacker/files/latest/download" },
 
-    @{ Name="InjGen v2";             Desc="Injection detection tool";                             Category="Other-Analysis"; Type="GitHub"; URL="https://github.com/NotRequiem/InjGen/releases/latest" },
-    @{ Name="Luyten";                Desc="Java decompiler";                                      Category="Other-Analysis"; Type="GitHub"; URL="https://github.com/deathmarine/Luyten/releases/latest" },
-    @{ Name="DPS Analyzer (nay-cat)"; Desc="DPS analyzer";                                       Category="Other-Analysis"; Type="GitHub"; URL="https://github.com/nay-cat/dpsanalyzer/releases/latest" },
-    @{ Name="DIE Engine";            Desc="Detect-It-Easy PE analyzer";                           Category="Other-Analysis"; Type="GitHub"; URL="https://github.com/horsicq/DIE-engine/releases/latest" },
+    @{ Name="InjGen v2";             Desc="Injection detection tool";                             Category="Analysis"; Type="GitHub"; URL="https://github.com/NotRequiem/InjGen/releases/latest" },
+    @{ Name="Luyten";                Desc="Java decompiler";                                      Category="Analysis"; Type="GitHub"; URL="https://github.com/deathmarine/Luyten/releases/latest" },
+    @{ Name="DPS Analyzer (nay-cat)"; Desc="DPS analyzer";                                       Category="Analysis"; Type="GitHub"; URL="https://github.com/nay-cat/dpsanalyzer/releases/latest" },
+    @{ Name="DIE Engine";            Desc="Detect-It-Easy PE analyzer";                           Category="Analysis"; Type="GitHub"; URL="https://github.com/horsicq/DIE-engine/releases/latest" },
 
-    @{ Name="Jarabel Light";         Desc="JAR analysis tool";                                    Category="Other-Misc"; Type="GitHub"; URL="https://github.com/nay-cat/Jarabel/releases/latest" },
-    @{ Name="Unicode";               Desc="Unicode character analyzer";                           Category="Other-Misc"; Type="GitHub"; URL="https://github.com/RRancio/Exec/releases/latest" },
-    @{ Name="CachedProgramsList";    Desc="Cache program list";                                   Category="Other-Misc"; Type="GitHub"; URL="https://github.com/ponei/CachedProgramsList/releases/latest" },
-    @{ Name="TimeChangeDetect";      Desc="System time change detector";                          Category="Other-Misc"; Type="GitHub"; URL="https://github.com/santiagolin/TimeChangeDetect/releases/latest" },
-    @{ Name="HardlinkFinder";        Desc="Hardlink detection";                                   Category="Other-Misc"; Type="GitHub"; URL="https://github.com/praiselily/HardlinkFinder/releases/latest" },
+    @{ Name="Jarabel Light";         Desc="JAR analysis tool";                                    Category="Misc"; Type="GitHub"; URL="https://github.com/nay-cat/Jarabel/releases/latest" },
+    @{ Name="Unicode";               Desc="Unicode character analyzer";                           Category="Misc"; Type="GitHub"; URL="https://github.com/RRancio/Exec/releases/latest" },
+    @{ Name="CachedProgramsList";    Desc="Cache program list";                                   Category="Misc"; Type="GitHub"; URL="https://github.com/ponei/CachedProgramsList/releases/latest" },
+    @{ Name="TimeChangeDetect";      Desc="System time change detector";                          Category="Misc"; Type="GitHub"; URL="https://github.com/santiagolin/TimeChangeDetect/releases/latest" },
+    @{ Name="HardlinkFinder";        Desc="Hardlink detection";                                   Category="Misc"; Type="GitHub"; URL="https://github.com/praiselily/HardlinkFinder/releases/latest" },
 
-    @{ Name="LastActivityView";      Desc="List recent user activity";                            Category="Other-NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/lastactivityview.zip" },
-    @{ Name="UsbDriveLog";           Desc="Show USB drive history";                               Category="Other-NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/usbdrivelog.zip" },
-    @{ Name="WinDefLogView";         Desc="Windows Defender log viewer";                          Category="Other-NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/windeflogview.zip" },
-    @{ Name="UninstallView";         Desc="List installed programs";                              Category="Other-NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/uninstallview-x64.zip" },
-    @{ Name="LoadedDllsView";        Desc="Loaded DLL list";                                      Category="Other-NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/loadeddllsview-x64.zip" },
-    @{ Name="Clipboardic";           Desc="Clipboard history viewer";                             Category="Other-NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/clipboardic.zip" },
+    @{ Name="LastActivityView";      Desc="List recent user activity";                            Category="NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/lastactivityview.zip" },
+    @{ Name="UsbDriveLog";           Desc="Show USB drive history";                               Category="NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/usbdrivelog.zip" },
+    @{ Name="WinDefLogView";         Desc="Windows Defender log viewer";                          Category="NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/windeflogview.zip" },
+    @{ Name="UninstallView";         Desc="List installed programs";                              Category="NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/uninstallview-x64.zip" },
+    @{ Name="LoadedDllsView";        Desc="Loaded DLL list";                                      Category="NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/loadeddllsview-x64.zip" },
+    @{ Name="Clipboardic";           Desc="Clipboard history viewer";                             Category="NirSoft"; Type="Web"; URL="https://www.nirsoft.net/utils/clipboardic.zip" },
 
-    @{ Name="WxTCmd";                Desc="Windows Timeline database";                            Category="Other-Zimmerman"; Type="Web"; URL="https://download.ericzimmermanstools.com/net6/WxTCmd.zip" },
+    @{ Name="WxTCmd";                Desc="Windows Timeline database";                            Category="Zimmerman"; Type="Web"; URL="https://download.ericzimmermanstools.com/net6/WxTCmd.zip" },
 
-    @{ Name="TeslaPro MacroFinder";  Desc="Macro finder tool";                                    Category="Other-TeslaPro"; Type="GitHub"; URL="https://github.com/TeslaPros/TeslaProMacroFinder/releases/latest" },
-    @{ Name="TeslaPro VPNFinder";    Desc="VPN finder";                                           Category="Other-TeslaPro"; Type="GitHub"; URL="https://github.com/TeslaPros/VPNChecker/releases/latest" },
-    @{ Name="TeslaPro GhostClientFucker"; Desc="Ghost client detector";                           Category="Other-TeslaPro"; Type="GitHub"; URL="https://github.com/TeslaPros/GhostClientFucker/releases/latest" },
+    @{ Name="TeslaPro MacroFinder";  Desc="Macro finder tool";                                    Category="TeslaPro"; Type="GitHub"; URL="https://github.com/TeslaPros/TeslaProMacroFinder/releases/latest" },
+    @{ Name="TeslaPro VPNFinder";    Desc="VPN finder";                                           Category="TeslaPro"; Type="GitHub"; URL="https://github.com/TeslaPros/VPNChecker/releases/latest" },
+    @{ Name="TeslaPro GhostClientFucker"; Desc="Ghost client detector";                           Category="TeslaPro"; Type="GitHub"; URL="https://github.com/TeslaPros/GhostClientFucker/releases/latest" },
 
-    @{ Name="JAR Scanner";           Desc="JAR scanner by Praiselily";                            Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/JARScanner/refs/heads/main/JARScanner.ps1')" },
-    @{ Name="Service Enabler";       Desc="Service enabler by Praiselily";                        Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/Service-Enabler.ps1')" },
-    @{ Name="BAM Robado Checker";    Desc="Check stolen BAM records";                             Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/IlleUco/ScreenShare/main/BamRobadoIlleUco.ps1')" },
-    @{ Name="Recycle Bin Checker";   Desc="Recycle bin analyzer";                                 Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/IlleUco/ScreenShare/main/RecycleBinChecker.ps1')" },
-    @{ Name="PrismScreenShareAnalyze"; Desc="PrismSSAnalyzer";                                    Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/JustWolfeyy/PrismScreenShareAnalyzer/refs/heads/main/PrismSSAnalyzer.ps1')" },
-    @{ Name="USB Events Viewer";     Desc="USB history viewer";                                   Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/IlleUco/ScreenShare/main/USBEvents.ps1')" },
-    @{ Name="RedLotus BAM";          Desc="RedLotus BAM inspection";                              Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/PureIntent/ScreenShare/main/RedLotusBam.ps1')" },
-    @{ Name="Javaw-Scanner";         Desc="Javaw scanner by DrakFlxme";                           Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/DrakFlxme/Javaw-Scanner.ps1/refs/heads/main/Javaw-Scanner.ps1')" },
-    @{ Name="File-Scanner-Powershell"; Desc="RedLotus file scanner";                               Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/RedLotus-Development/File-Scanner-Powershell/refs/heads/Red-Lotus/REDLOTUS-AdminEXEs.ps1')" },
-    @{ Name="RedLotus Collector";    Desc="RedLotus forensic collector";                          Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/RedLotusForensics/tool/main/Collector.ps1')" },
-    @{ Name="TeslaPro Macro Finder Script"; Desc="TeslaPro macro finder";                          Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/TeslaPros/TeslaProMacroFinder/main/TeslaProMacroFinder_V3.ps1')" },
-    @{ Name="TeslaPro VPN Finder Script"; Desc="TeslaPro VPN finder";                              Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/TeslaPros/VPNChecker/main/VPNFinder.ps1')" },
-    @{ Name="TeslaPro Injector Detector"; Desc="Injector detector";                                Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Sellgui/Injectdetect/refs/heads/main/Injector%20Scanner.ps1')" },
-    @{ Name="TeslaPro Prime Macro Detector"; Desc="Prime macro detector";                          Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Sellgui/Javamacrodetector/refs/heads/main/Macro%20Detector.ps1')" },
-    @{ Name="TeslaPro Velaris Detector"; Desc="Velaris detector";                                  Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Va2lyR/-TeslaProSS-Toolv2/refs/heads/main/tools/Velaris-Detector.ps1')" },
-    @{ Name="TeslaPro Prestige Finder"; Desc="Prestige finder";                                   Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Sellgui/Egitserpragger/refs/heads/main/EgitserpRaper.ps1')" },
-    @{ Name="Macro Detector (Nickk)"; Desc="Detect macro software";                               Category="Other-Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Nickk196/MacroDetector/main/MacroDetector.ps1')" }
+    @{ Name="JAR Scanner";           Desc="JAR scanner by Praiselily";                            Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/JARScanner/refs/heads/main/JARScanner.ps1')" },
+    @{ Name="Service Enabler";       Desc="Service enabler by Praiselily";                        Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/Service-Enabler.ps1')" },
+    @{ Name="BAM Robado Checker";    Desc="Check stolen BAM records";                             Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/IlleUco/ScreenShare/main/BamRobadoIlleUco.ps1')" },
+    @{ Name="Recycle Bin Checker";   Desc="Recycle bin analyzer";                                 Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/IlleUco/ScreenShare/main/RecycleBinChecker.ps1')" },
+    @{ Name="PrismScreenShareAnalyze"; Desc="PrismSSAnalyzer";                                    Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/JustWolfeyy/PrismScreenShareAnalyzer/refs/heads/main/PrismSSAnalyzer.ps1')" },
+    @{ Name="USB Events Viewer";     Desc="USB history viewer";                                   Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/IlleUco/ScreenShare/main/USBEvents.ps1')" },
+    @{ Name="RedLotus BAM";          Desc="RedLotus BAM inspection";                              Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/PureIntent/ScreenShare/main/RedLotusBam.ps1')" },
+    @{ Name="Javaw-Scanner";         Desc="Javaw scanner by DrakFlxme";                           Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/DrakFlxme/Javaw-Scanner.ps1/refs/heads/main/Javaw-Scanner.ps1')" },
+    @{ Name="File-Scanner-Powershell"; Desc="RedLotus file scanner";                               Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/RedLotus-Development/File-Scanner-Powershell/refs/heads/Red-Lotus/REDLOTUS-AdminEXEs.ps1')" },
+    @{ Name="RedLotus Collector";    Desc="RedLotus forensic collector";                          Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/RedLotusForensics/tool/main/Collector.ps1')" },
+    @{ Name="TeslaPro Macro Finder Script"; Desc="TeslaPro macro finder";                          Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/TeslaPros/TeslaProMacroFinder/main/TeslaProMacroFinder_V3.ps1')" },
+    @{ Name="TeslaPro VPN Finder Script"; Desc="TeslaPro VPN finder";                              Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/TeslaPros/VPNChecker/main/VPNFinder.ps1')" },
+    @{ Name="TeslaPro Injector Detector"; Desc="Injector detector";                                Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Sellgui/Injectdetect/refs/heads/main/Injector%20Scanner.ps1')" },
+    @{ Name="TeslaPro Prime Macro Detector"; Desc="Prime macro detector";                          Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Sellgui/Javamacrodetector/refs/heads/main/Macro%20Detector.ps1')" },
+    @{ Name="TeslaPro Velaris Detector"; Desc="Velaris detector";                                  Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Va2lyR/-TeslaProSS-Toolv2/refs/heads/main/tools/Velaris-Detector.ps1')" },
+    @{ Name="TeslaPro Prestige Finder"; Desc="Prestige finder";                                   Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Sellgui/Egitserpragger/refs/heads/main/EgitserpRaper.ps1')" },
+    @{ Name="Macro Detector (Nickk)"; Desc="Detect macro software";                               Category="Scripts"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/Nickk196/MacroDetector/main/MacroDetector.ps1')" }
 )
 
 
@@ -892,11 +892,12 @@ function Show-SourceCode {
 
 # TABS
 
-$Categories = @("Other")
+$AllCategories = @("Valyar","ModAnalyzer","ClientsDetector","Orbdiff","Spokwn","Tonynoh","Praiselily","RedLotus","DetectAC","TeslaPro","Echo","TRSSCommunity","Magnet","Forensics","SystemTools","Analysis","Misc","NirSoft","Zimmerman","Scripts","Others","Dependencies")
 
-$OtherSubCategories = @("Valyar","ModAnalyzer","ClientsDetector","Orbdiff","Spokwn","Tonynoh","Praiselily","RedLotus","DetectAC","TeslaPro","Echo","TRSSCommunity","Magnet","Forensics","SystemTools","Analysis","Misc","NirSoft","Zimmerman","Scripts","Others","Dependencies")
+foreach ($cat in $AllCategories) {
+    $catTools = $ToolData | Where-Object { $_.Category -eq $cat }
+    if (-not $catTools) { continue }
 
-foreach ($cat in $Categories) {
     $tab = New-Object System.Windows.Controls.TabItem
     $tab.Header = $cat
     $scroll = New-Object System.Windows.Controls.ScrollViewer
@@ -904,118 +905,8 @@ foreach ($cat in $Categories) {
     $scroll.HorizontalScrollBarVisibility = "Disabled"
     $wrap = New-Object System.Windows.Controls.WrapPanel
     $wrap.Margin = "4"
-    $catTools = $ToolData | Where-Object { $_.Category -eq $cat }
 
-    if ($cat -eq "Other") {
-        $otherPanel = New-Object System.Windows.Controls.Grid
-        $otherPanel.Margin = "4"
-        $otherPanel.RowDefinitions.Add((New-Object System.Windows.Controls.RowDefinition -Property @{ Height = [System.Windows.GridLength]::Auto }))
-        $otherPanel.RowDefinitions.Add((New-Object System.Windows.Controls.RowDefinition -Property @{ Height = [System.Windows.GridLength]::new(1, [System.Windows.GridUnitType]::Star) }))
-
-        $subCatBar = New-Object System.Windows.Controls.WrapPanel
-        $subCatBar.Margin = "4,4,4,8"
-
-        $subCatContent = New-Object System.Windows.Controls.Grid
-        [System.Windows.Controls.Grid]::SetRow($subCatBar, 0)
-        [System.Windows.Controls.Grid]::SetRow($subCatContent, 1)
-        $otherPanel.Children.Add($subCatBar) | Out-Null
-        $otherPanel.Children.Add($subCatContent) | Out-Null
-
-        $script:subCatButtons = @()
-        $script:subCatPanels = @()
-        $script:activeSubCatIdx = -1
-
-        for ($subCatIdx = 0; $subCatIdx -lt $OtherSubCategories.Count; $subCatIdx++) {
-            $subCat = $OtherSubCategories[$subCatIdx]
-            $subCatTools = $ToolData | Where-Object { $_.Category -eq "Other-$subCat" }
-            $toolCount = @($subCatTools).Count
-
-            $pillBtn = New-Object System.Windows.Controls.Button
-            $pillBtn.Content = "$subCat ($toolCount)"
-            $pillBtn.FontSize = 11
-            $pillBtn.FontWeight = "SemiBold"
-            $pillBtn.Height = 32
-            $pillBtn.Padding = "16,0"
-            $pillBtn.Margin = "4,3"
-            $pillBtn.Cursor = "Hand"
-            $pillBtn.Foreground = "#777777"
-
-            $pillBorder = [System.Windows.FrameworkElementFactory]::new([System.Windows.Controls.Border])
-            $pillBorder.Name = "PillBorder"
-            $pillBorder.SetValue([System.Windows.Controls.Control]::BackgroundProperty, [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#131313")))
-            $pillBorder.SetValue([System.Windows.Controls.Border]::CornerRadiusProperty, [System.Windows.CornerRadius]::new(8))
-            $pillBorder.SetValue([System.Windows.Controls.Border]::BorderBrushProperty, [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#222222")))
-            $pillBorder.SetValue([System.Windows.Controls.Border]::BorderThicknessProperty, [System.Windows.Thickness]::new(1))
-            $pillBorder.SetValue([System.Windows.UIElement]::RenderTransformOriginProperty, [System.Windows.Point]::new(0.5, 0.5))
-            $pillContent = [System.Windows.FrameworkElementFactory]::new([System.Windows.Controls.ContentPresenter])
-            $pillContent.SetValue([System.Windows.Controls.ContentPresenter]::HorizontalAlignmentProperty, [System.Windows.HorizontalAlignment]::Center)
-            $pillContent.SetValue([System.Windows.Controls.ContentPresenter]::VerticalAlignmentProperty, [System.Windows.VerticalAlignment]::Center)
-            $pillBorder.AppendChild($pillContent)
-            $pillTemplate = [System.Windows.Controls.ControlTemplate]::new([System.Windows.Controls.Button])
-            $pillTemplate.VisualTree = $pillBorder
-            $pillBtn.Template = $pillTemplate
-
-            $pillBtn.Add_Loaded({
-                $b = $_.Source
-                if ([Windows.Media.VisualTreeHelper]::GetChildrenCount($b) -gt 0) {
-                    $brd = [Windows.Media.VisualTreeHelper]::GetChild($b, 0)
-                    if ($brd) {
-                        $st = [System.Windows.Media.ScaleTransform]::new(1.0, 1.0)
-                        $brd.RenderTransform = $st
-                        $b.Resources["pillSc"] = $st
-                    }
-                }
-            })
-
-            $pillBtn.Add_MouseEnter({
-                $b = $_.Source
-                if ([Windows.Media.VisualTreeHelper]::GetChildrenCount($b) -gt 0) {
-                    $brd = [Windows.Media.VisualTreeHelper]::GetChild($b, 0)
-                    if ($brd -and $brd -is [System.Windows.Controls.Border] -and $brd.Background -ne [System.Windows.Media.Brushes]::Red) {
-                        $brd.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#1C1C1C"))
-                        $brd.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#333333"))
-                    }
-                }
-                $sc = $b.Resources["pillSc"]
-                if ($sc) {
-                    $d = [Windows.Duration]::new([TimeSpan]::FromMilliseconds(120))
-                    $ease = [Windows.Media.Animation.CubicEase]::new()
-                    $sc.BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty, [Windows.Media.Animation.DoubleAnimation]::new(1.04, $d))
-                    $sc.BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleYProperty, [Windows.Media.Animation.DoubleAnimation]::new(1.04, $d))
-                }
-            })
-
-            $pillBtn.Add_MouseLeave({
-                $b = $_.Source
-                if ([Windows.Media.VisualTreeHelper]::GetChildrenCount($b) -gt 0) {
-                    $brd = [Windows.Media.VisualTreeHelper]::GetChild($b, 0)
-                    if ($brd -and $brd -is [System.Windows.Controls.Border]) {
-                        $isActive = $b.Foreground -eq [System.Windows.Media.Brushes]::White
-                        if (-not $isActive) {
-                            $brd.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#131313"))
-                            $brd.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#222222"))
-                        }
-                    }
-                }
-                $sc = $b.Resources["pillSc"]
-                if ($sc) {
-                    $d = [Windows.Duration]::new([TimeSpan]::FromMilliseconds(150))
-                    $ease = [Windows.Media.Animation.CubicEase]::new()
-                    $sc.BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty, [Windows.Media.Animation.DoubleAnimation]::new(1.0, $d))
-                    $sc.BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleYProperty, [Windows.Media.Animation.DoubleAnimation]::new(1.0, $d))
-                }
-            })
-
-            $script:subCatButtons += $pillBtn
-
-            $toolPanel = New-Object System.Windows.Controls.ScrollViewer
-            $toolPanel.VerticalScrollBarVisibility = "Auto"
-            $toolPanel.HorizontalScrollBarVisibility = "Disabled"
-            $toolPanel.Visibility = "Collapsed"
-            $toolWrap = New-Object System.Windows.Controls.WrapPanel
-            $toolWrap.Margin = "4"
-
-            foreach ($tool in $subCatTools) {
+    foreach ($tool in $catTools) {
                 $t = $tool
                 $btn = New-Object System.Windows.Controls.Button
                 $btn.Width = 224; $btn.Height = 86; $btn.FontSize = 12; $btn.Margin = "6"; $btn.Cursor = "Hand"; $btn.Foreground = "#E0E0E0"
@@ -1239,65 +1130,10 @@ foreach ($cat in $Categories) {
                 $toolWrap.Children.Add($btn) | Out-Null
             }
 
-            $toolPanel.Content = $toolWrap
-            [System.Windows.Controls.Grid]::SetRow($toolPanel, 1)
-            $subCatContent.Children.Add($toolPanel) | Out-Null
-            $script:subCatPanels += $toolPanel
-
-            $pillBtnIdx = $subCatIdx
-            $pillBtn.Add_Click({
-                $idx = $script:subCatButtons.IndexOf($_.Source)
-                if ($idx -lt 0 -or $idx -eq $script:activeSubCatIdx) { return }
-                if ($script:activeSubCatIdx -ge 0 -and $script:activeSubCatIdx -lt $script:subCatPanels.Count) {
-                    $script:subCatPanels[$script:activeSubCatIdx].Visibility = "Collapsed"
-                }
-                $script:subCatPanels[$idx].Visibility = "Visible"
-                if ($script:activeSubCatIdx -ge 0 -and $script:activeSubCatIdx -lt $script:subCatButtons.Count) {
-                    $old = $script:subCatButtons[$script:activeSubCatIdx]
-                    $old.Foreground = "#777777"
-                    if ([Windows.Media.VisualTreeHelper]::GetChildrenCount($old) -gt 0) {
-                        $oldBorder = [Windows.Media.VisualTreeHelper]::GetChild($old, 0)
-                        if ($oldBorder -and $oldBorder -is [System.Windows.Controls.Border]) {
-                            $oldBorder.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#131313"))
-                            $oldBorder.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#222222"))
-                        }
-                    }
-                }
-                $_.Source.Foreground = "#FFFFFF"
-                if ([Windows.Media.VisualTreeHelper]::GetChildrenCount($_.Source) -gt 0) {
-                    $newBorder = [Windows.Media.VisualTreeHelper]::GetChild($_.Source, 0)
-                    if ($newBorder -and $newBorder -is [System.Windows.Controls.Border]) {
-                        $newBorder.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
-                        $newBorder.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
-                    }
-                }
-                $script:activeSubCatIdx = $idx
-            })
-
-            $subCatBar.Children.Add($pillBtn) | Out-Null
+            $scroll.Content = $wrap
+            $tab.Content = $scroll
+            $ToolsTab.Items.Add($tab) | Out-Null
         }
-
-        if ($script:subCatButtons.Count -gt 0) {
-            $first = $script:subCatButtons[0]
-            $first.Foreground = "#FFFFFF"
-            if ([Windows.Media.VisualTreeHelper]::GetChildrenCount($first) -gt 0) {
-                $fb = [Windows.Media.VisualTreeHelper]::GetChild($first, 0)
-                if ($fb -and $fb -is [System.Windows.Controls.Border]) {
-                    $fb.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
-                    $fb.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
-                }
-            }
-            if ($script:subCatPanels.Count -gt 0) {
-                $script:subCatPanels[0].Visibility = "Visible"
-            }
-            $script:activeSubCatIdx = 0
-        }
-
-        $scroll.Content = $otherPanel
-        $tab.Content = $scroll
-        $ToolsTab.Items.Add($tab) | Out-Null
-        continue
-    }
 
     foreach ($tool in $catTools) {
         $t = $tool
