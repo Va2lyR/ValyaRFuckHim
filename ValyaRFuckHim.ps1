@@ -313,27 +313,27 @@ if (-not $script:disclaimerAccepted) { exit }
 # MAIN WINDOW XAML
 
 [xml]$xaml = @"
-<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="ValyaRFuckHim" Width="1340" Height="820" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent" FontFamily="Segoe UI">
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="ValyaRFuckHim" Width="1200" Height="750" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent" FontFamily="Segoe UI">
     <Window.Resources>
-        <SolidColorBrush x:Key="Bg" Color="#0B0B0B"/>
-        <SolidColorBrush x:Key="Surface" Color="#111111"/>
-        <SolidColorBrush x:Key="Surface2" Color="#161616"/>
-        <SolidColorBrush x:Key="Border" Color="#1E1E1E"/>
+        <SolidColorBrush x:Key="Bg" Color="#0A0A0A"/>
+        <SolidColorBrush x:Key="Surface" Color="#0F0F0F"/>
+        <SolidColorBrush x:Key="Surface2" Color="#141414"/>
+        <SolidColorBrush x:Key="Border" Color="#181818"/>
         <SolidColorBrush x:Key="Accent" Color="#E53935"/>
         <SolidColorBrush x:Key="Text" Color="#F0F0F0"/>
         <SolidColorBrush x:Key="TextSec" Color="#888888"/>
         <SolidColorBrush x:Key="TextDim" Color="#444444"/>
         <Style x:Key="TitleBtn" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="#555555"/>
-            <Setter Property="Width" Value="46"/>
-            <Setter Property="Height" Value="36"/>
+            <Setter Property="Foreground" Value="#444444"/>
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="32"/>
             <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontSize" Value="12"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="b" Background="Transparent" CornerRadius="8">
+                        <Border x:Name="b" Background="Transparent" CornerRadius="6">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -348,21 +348,21 @@ if (-not $script:disclaimerAccepted) { exit }
         </Style>
         <Style x:Key="SideBtn" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="#888888"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Height" Value="36"/>
+            <Setter Property="Foreground" Value="#666666"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Height" Value="30"/>
             <Setter Property="Margin" Value="0,1"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="b" Background="Transparent" CornerRadius="8" Padding="14,0">
+                        <Border x:Name="b" Background="Transparent" CornerRadius="6" Padding="12,0">
                             <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="b" Property="Background" Value="#1E1E1E"/>
+                                <Setter TargetName="b" Property="Background" Value="#161616"/>
                                 <Setter Property="Foreground" Value="#FFFFFF"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -370,30 +370,47 @@ if (-not $script:disclaimerAccepted) { exit }
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="ScrollViewer">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollViewer">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Background="Transparent">
+                                <ScrollContentPresenter/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
-    <Border Background="{StaticResource Bg}" BorderBrush="{StaticResource Border}" BorderThickness="1" CornerRadius="12">
+    <Border Background="{StaticResource Bg}" BorderBrush="{StaticResource Border}" BorderThickness="1" CornerRadius="10">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="48"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="0" Background="#0D0D0D" BorderBrush="{StaticResource Border}" BorderThickness="0,0,0,1">
-                <Grid Margin="20,0">
+            <Border Grid.Row="0" Background="#0C0C0C" BorderBrush="{StaticResource Border}" BorderThickness="0,0,0,1">
+                <Grid Margin="16,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                        <Border Background="#E53935" Width="7" Height="7" CornerRadius="3.5" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                        <TextBlock Text="VALYAR" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF" FontFamily="Consolas" VerticalAlignment="Center"/>
-                        <Border Background="#1E1E1E" Width="1" Height="16" Margin="12,0" VerticalAlignment="Center"/>
-                        <Border x:Name="StatusBadge" Background="#1A0000" Padding="10,3" VerticalAlignment="Center" CornerRadius="4">
-                            <TextBlock x:Name="StatusBadgeText" Text="IDLE" FontSize="9" FontWeight="Bold" Foreground="#E53935" FontFamily="Consolas"/>
+                        <Border Background="#E53935" Width="6" Height="6" CornerRadius="3" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="VALYAR" FontSize="12" FontWeight="Bold" Foreground="#FFFFFF" FontFamily="Consolas" VerticalAlignment="Center"/>
+                        <Border Background="#1A1A1A" Width="1" Height="14" Margin="10,0" VerticalAlignment="Center"/>
+                        <Border x:Name="StatusBadge" Background="#1A0000" Padding="8,2" VerticalAlignment="Center" CornerRadius="3">
+                            <TextBlock x:Name="StatusBadgeText" Text="IDLE" FontSize="8" FontWeight="Bold" Foreground="#E53935" FontFamily="Consolas"/>
                         </Border>
-                        <TextBlock x:Name="StatusTitle" Text="Ready" FontSize="11" Foreground="#999999" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBlock x:Name="StatusSub" Text="Select a tool to begin." FontSize="10" Foreground="#444444" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                        <TextBlock x:Name="StatusTitle" Text="Ready" FontSize="10" Foreground="#777777" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                        <TextBlock x:Name="StatusSub" Text="Select a tool to begin." FontSize="9" Foreground="#333333" VerticalAlignment="Center" Margin="6,0,0,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                         <Button x:Name="MinBtn" Style="{StaticResource TitleBtn}" Content="&#x2013;"/>
@@ -405,20 +422,20 @@ if (-not $script:disclaimerAccepted) { exit }
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.Column="0" Margin="16,12,8,12">
-                    <TabControl x:Name="ToolsTab" Background="Transparent" BorderThickness="0" Padding="4">
+                <Border Grid.Column="0" Margin="12,8,6,8">
+                    <TabControl x:Name="ToolsTab" Background="Transparent" BorderThickness="0" Padding="2">
                         <TabControl.Resources>
                             <Style TargetType="TabItem">
-                                <Setter Property="Foreground" Value="#555555"/>
-                                <Setter Property="FontSize" Value="12"/>
-                                <Setter Property="Padding" Value="16,8"/>
+                                <Setter Property="Foreground" Value="#444444"/>
+                                <Setter Property="FontSize" Value="11"/>
+                                <Setter Property="Padding" Value="14,6"/>
                                 <Setter Property="Cursor" Value="Hand"/>
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="TabItem">
-                                            <Border x:Name="tb" Background="Transparent" CornerRadius="8" Margin="3,4" Padding="16,9">
+                                            <Border x:Name="tb" Background="Transparent" CornerRadius="6" Margin="2,3" Padding="14,7">
                                                 <ContentPresenter ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </Border>
                                             <ControlTemplate.Triggers>
@@ -432,8 +449,8 @@ if (-not $script:disclaimerAccepted) { exit }
                                                         <Condition Property="IsMouseOver" Value="True"/>
                                                         <Condition Property="IsSelected" Value="False"/>
                                                     </MultiTrigger.Conditions>
-                                                    <Setter TargetName="tb" Property="Background" Value="#1E1E1E"/>
-                                                    <Setter Property="Foreground" Value="#CCCCCC"/>
+                                                    <Setter TargetName="tb" Property="Background" Value="#161616"/>
+                                                    <Setter Property="Foreground" Value="#AAAAAA"/>
                                                 </MultiTrigger>
                                             </ControlTemplate.Triggers>
                                         </ControlTemplate>
@@ -444,7 +461,7 @@ if (-not $script:disclaimerAccepted) { exit }
                     </TabControl>
                 </Border>
 
-                <Border Grid.Column="1" Background="#0E0E0E" BorderBrush="{StaticResource Border}" BorderThickness="1,0,0,0">
+                <Border Grid.Column="1" Background="#0C0C0C" BorderBrush="{StaticResource Border}" BorderThickness="1,0,0,0">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -455,41 +472,39 @@ if (-not $script:disclaimerAccepted) { exit }
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <Border Grid.Row="0" Background="#0A0A0A">
+                            <Border Grid.Row="0" Background="#080808">
                                 <Grid>
-                                    <Image x:Name="LogoImage" Width="250" Height="180" Stretch="UniformToFill" ClipToBounds="True" Opacity="0.8"/>
+                                    <Image x:Name="LogoImage" Width="200" Height="140" Stretch="UniformToFill" ClipToBounds="True" Opacity="0.7"/>
                                     <Border VerticalAlignment="Bottom">
                                         <Border.Background>
                                             <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                <GradientStop Color="#000A0A0A" Offset="0"/>
-                                                <GradientStop Color="#FF0A0A0A" Offset="1"/>
+                                                <GradientStop Color="#00080808" Offset="0"/>
+                                                <GradientStop Color="#FF080808" Offset="1"/>
                                             </LinearGradientBrush>
                                         </Border.Background>
                                     </Border>
                                 </Grid>
                             </Border>
-                            <Border Grid.Row="1" Background="#0E0E0E" Padding="20,12">
+                            <Border Grid.Row="1" Background="#0C0C0C" Padding="14,8">
                                 <StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="VALYAR" FontSize="16" FontWeight="Bold" Foreground="#FFFFFF" FontFamily="Consolas"/>
-                                    </StackPanel>
-                                    <TextBlock Text="ALL u want here" FontSize="9" Foreground="#555555" Margin="0,2,0,0"/>
+                                    <TextBlock Text="VALYAR" FontSize="13" FontWeight="Bold" Foreground="#FFFFFF" FontFamily="Consolas"/>
+                                    <TextBlock Text="ALL u want here" FontSize="8" Foreground="#444444" Margin="0,1,0,0"/>
                                 </StackPanel>
                             </Border>
                         </Grid>
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                            <StackPanel Margin="0,6,0,6">
-                                <Border Background="{StaticResource Surface}" Margin="10,3" Padding="12,8" CornerRadius="10">
+                            <StackPanel Margin="0,4,0,4">
+                                <Border Background="{StaticResource Surface}" Margin="8,2" Padding="10,6" CornerRadius="8">
                                     <StackPanel>
-                                        <TextBlock Text="ACTIONS" FontSize="8" FontWeight="SemiBold" Foreground="#444444" FontFamily="Consolas" Margin="0,0,0,6"/>
+                                        <TextBlock Text="ACTIONS" FontSize="7" FontWeight="SemiBold" Foreground="#333333" FontFamily="Consolas" Margin="0,0,0,4"/>
                                         <Button x:Name="OpenFolderBtn" Content="Open Install Folder" Style="{StaticResource SideBtn}"/>
                                         <Button x:Name="ClearCacheBtn" Content="Clear Downloaded Files" Style="{StaticResource SideBtn}"/>
                                         <Button x:Name="OpenCmdBtn" Content="Open Terminal" Style="{StaticResource SideBtn}"/>
                                     </StackPanel>
                                 </Border>
-                                <Border Background="{StaticResource Surface}" Margin="10,3" Padding="12,8" CornerRadius="10">
+                                <Border Background="{StaticResource Surface}" Margin="8,2" Padding="10,6" CornerRadius="8">
                                     <StackPanel>
-                                        <TextBlock Text="QUICK ACCESS" FontSize="8" FontWeight="SemiBold" Foreground="#444444" FontFamily="Consolas" Margin="0,0,0,6"/>
+                                        <TextBlock Text="QUICK ACCESS" FontSize="7" FontWeight="SemiBold" Foreground="#333333" FontFamily="Consolas" Margin="0,0,0,4"/>
                                         <Button x:Name="BtnPrefetch" Content="Prefetch" Style="{StaticResource SideBtn}"/>
                                         <Button x:Name="BtnRecent" Content="Recent Files" Style="{StaticResource SideBtn}"/>
                                         <Button x:Name="BtnTemp" Content="Temp Folder" Style="{StaticResource SideBtn}"/>
@@ -502,25 +517,25 @@ if (-not $script:disclaimerAccepted) { exit }
                                         <Button x:Name="BtnIndexedLoc" Content="Indexed Locations" Style="{StaticResource SideBtn}"/>
                                     </StackPanel>
                                 </Border>
-                                <Border Background="{StaticResource Surface}" Margin="10,3" Padding="12,8" CornerRadius="10">
+                                <Border Background="{StaticResource Surface}" Margin="8,2" Padding="10,6" CornerRadius="8">
                                     <StackPanel>
-                                        <TextBlock Text="CREDITS" FontSize="8" FontWeight="SemiBold" Foreground="#444444" FontFamily="Consolas" Margin="0,0,0,6"/>
-                                        <TextBlock Text="_iaec" FontSize="11" FontWeight="SemiBold" Foreground="#AAAAAA" FontFamily="Consolas"/>
-                                        <TextBlock Text="Discord: _iaec" FontSize="9" Foreground="#555555" Margin="0,3,0,0"/>
-                                        <TextBlock Text="GitHub: Va2lyR" FontSize="9" Foreground="#555555" Margin="0,2,0,0"/>
+                                        <TextBlock Text="CREDITS" FontSize="7" FontWeight="SemiBold" Foreground="#333333" FontFamily="Consolas" Margin="0,0,0,4"/>
+                                        <TextBlock Text="_iaec" FontSize="10" FontWeight="SemiBold" Foreground="#888888" FontFamily="Consolas"/>
+                                        <TextBlock Text="Discord: _iaec" FontSize="8" Foreground="#444444" Margin="0,2,0,0"/>
+                                        <TextBlock Text="GitHub: Va2lyR" FontSize="8" Foreground="#444444" Margin="0,1,0,0"/>
                                     </StackPanel>
                                 </Border>
-                                <Border Background="{StaticResource Surface}" Margin="10,3" Padding="12,8" CornerRadius="10">
+                                <Border Background="{StaticResource Surface}" Margin="8,2" Padding="10,6" CornerRadius="8">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="120"/>
+                                            <RowDefinition Height="100"/>
                                         </Grid.RowDefinitions>
-                                        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,6">
-                                            <Border Background="#E53935" Width="5" Height="5" CornerRadius="2.5" Margin="0,0,8,0" VerticalAlignment="Center"/>
-                                            <TextBlock Text="LOG" FontSize="8" FontWeight="SemiBold" Foreground="#444444" FontFamily="Consolas" VerticalAlignment="Center"/>
+                                        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,4">
+                                            <Border Background="#E53935" Width="4" Height="4" CornerRadius="2" Margin="0,0,6,0" VerticalAlignment="Center"/>
+                                            <TextBlock Text="LOG" FontSize="7" FontWeight="SemiBold" Foreground="#333333" FontFamily="Consolas" VerticalAlignment="Center"/>
                                         </StackPanel>
-                                        <TextBox x:Name="LogBox" Grid.Row="1" Background="#0A0A0A" Foreground="#E53935" BorderBrush="#1E1E1E" BorderThickness="1" FontFamily="Consolas" FontSize="9" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Padding="8,6" VerticalAlignment="Stretch"/>
+                                        <TextBox x:Name="LogBox" Grid.Row="1" Background="#080808" Foreground="#E53935" BorderBrush="#141414" BorderThickness="1" FontFamily="Consolas" FontSize="8" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Padding="6,4" VerticalAlignment="Stretch"/>
                                     </Grid>
                                 </Border>
                             </StackPanel>
@@ -529,12 +544,12 @@ if (-not $script:disclaimerAccepted) { exit }
                 </Border>
             </Grid>
 
-            <Border Grid.Row="2" Background="#0D0D0D" BorderBrush="{StaticResource Border}" BorderThickness="0,1,0,0" Padding="18,6">
+            <Border Grid.Row="2" Background="#0C0C0C" BorderBrush="{StaticResource Border}" BorderThickness="0,1,0,0" Padding="14,4">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <Border Background="#E53935" Width="5" Height="5" CornerRadius="2.5" Margin="0,0,8,0" VerticalAlignment="Center"/>
-                    <TextBlock Text="VALYAR" FontSize="9" FontWeight="SemiBold" Foreground="#555555" FontFamily="Consolas" VerticalAlignment="Center"/>
-                    <Border Background="#1E1E1E" Width="1" Height="12" Margin="12,0" VerticalAlignment="Center"/>
-                    <TextBlock Text="v1.0" FontSize="9" Foreground="#333333" FontFamily="Consolas" VerticalAlignment="Center"/>
+                    <Border Background="#E53935" Width="4" Height="4" CornerRadius="2" Margin="0,0,6,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="VALYAR" FontSize="8" FontWeight="SemiBold" Foreground="#444444" FontFamily="Consolas" VerticalAlignment="Center"/>
+                    <Border Background="#181818" Width="1" Height="10" Margin="10,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="v1.0" FontSize="8" Foreground="#2A2A2A" FontFamily="Consolas" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
         </Grid>
