@@ -21,20 +21,20 @@ $logoPath = Join-Path $scriptDir "logo.jpg"
 # TOOL DATA
 
 $ToolData = @(
-    @{ Name="Xkzutos Mod Analyzer";      Desc="Analyzes Minecraft mods using metadata and hashes";   Category="Mod Analyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/xkzuto96/xkzutos-mod-analyzer/main/XkzutosModAnalyzer.ps1')" },
-    @{ Name="Meow Mod Analyzer";         Desc="Analyzes Minecraft mods for suspicious indicators";  Category="Mod Analyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/MeowTonynoh/MeowModAnalyzer/main/MeowModAnalyzer.ps1')" },
-    @{ Name="P1aegg Mod Analyzer";       Desc="Analyzes Minecraft mods and files";                  Category="Mod Analyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/p1aegg/powershell/refs/heads/main/modanalyzer.ps1)" },
-    @{ Name="Yarp Mod Analyzer";         Desc="Analyzes Minecraft mods for cheat indicators";      Category="Mod Analyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/YarpLetapStan/PowershellScripts/refs/heads/main/YarpsModAnalyzer6.0.ps1)" },
-    @{ Name="Yumiko Mod Analyzer";       Desc="Analyzes Minecraft mods for suspicious content";    Category="Mod Analyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/veridondevvv/YumikoModAnalyzer/refs/heads/main/YumikoModAnalyzer.ps1')" },
-    @{ Name="Habibi Mod Analyzer";       Desc="Analyzes Minecraft mods for suspicious content";    Category="Mod Analyzer"; Type="Cmd"; Command="Set-ExecutionPolicy Bypass -Scope Process; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/HadronCollision/PowershellScripts/refs/heads/main/HabibiModAnalyzer.ps1')" },
+    @{ Name="Xkzutos Mod Analyzer";      Desc="Analyzes Minecraft mods using metadata and hashes";   Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/xkzuto96/xkzutos-mod-analyzer/main/XkzutosModAnalyzer.ps1')" },
+    @{ Name="Meow Mod Analyzer";         Desc="Analyzes Minecraft mods for suspicious indicators";  Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/MeowTonynoh/MeowModAnalyzer/main/MeowModAnalyzer.ps1')" },
+    @{ Name="P1aegg Mod Analyzer";       Desc="Analyzes Minecraft mods and files";                  Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/p1aegg/powershell/refs/heads/main/modanalyzer.ps1)" },
+    @{ Name="Yarp Mod Analyzer";         Desc="Analyzes Minecraft mods for cheat indicators";      Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/YarpLetapStan/PowershellScripts/refs/heads/main/YarpsModAnalyzer6.0.ps1)" },
+    @{ Name="Yumiko Mod Analyzer";       Desc="Analyzes Minecraft mods for suspicious content";    Category="Other-ModAnalyzer"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/veridondevvv/YumikoModAnalyzer/refs/heads/main/YumikoModAnalyzer.ps1')" },
+    @{ Name="Habibi Mod Analyzer";       Desc="Analyzes Minecraft mods for suspicious content";    Category="Other-ModAnalyzer"; Type="Cmd"; Command="Set-ExecutionPolicy Bypass -Scope Process; Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/HadronCollision/PowershellScripts/refs/heads/main/HabibiModAnalyzer.ps1')" },
 
-    @{ Name="TeslaPro Doomsday Detector"; Desc="Launches the Doomsday client detection workflow";   Category="Clients Detector"; Type="Cmd"; Command="iex (irm 'https://raw.githubusercontent.com/TeslaPros/DoomsdayDetector/main/DoomsdayClientDetectorV3.ps1')" },
-    @{ Name="TeslaPro GhostClientFinder"; Desc="Detects Ghost Client traces and modifications";     Category="Clients Detector"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/TeslaPros/GhostClientFucker/refs/heads/main/GhostClientFucker.ps1')" },
-    @{ Name="CheesyDqrkisFucker";        Desc="Searches for Dqrkis-related traces";                Category="Clients Detector"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/cheesecatlol/DQRKIS-FUCKER/refs/heads/main/DqrkisFucker.ps1')" },
-    @{ Name="Praiselily Doomsday Finder"; Desc="Finds Doomsday client artefacts";                   Category="Clients Detector"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/DoomsdayFinder.ps1)" },
-    @{ Name="Zedoon DoomsDay Detector";   Desc="Detects Doomsday client traces";                    Category="Clients Detector"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/zedoonvm1/powershell-scripts/refs/heads/main/DoomsDayDetector.ps1)" },
-    @{ Name="MeowClientFucker";           Desc="Detects known cheat client artefacts";              Category="Clients Detector"; Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowClientFucker/releases/latest" },
-    @{ Name="MeowDoomsdayFucker";         Desc="Detects Doomsday cheat artefacts";                 Category="Clients Detector"; Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowDoomsdayFucker/releases/latest" },
+    @{ Name="TeslaPro Doomsday Detector"; Desc="Launches the Doomsday client detection workflow";   Category="Other-ClientsDetector"; Type="Cmd"; Command="iex (irm 'https://raw.githubusercontent.com/TeslaPros/DoomsdayDetector/main/DoomsdayClientDetectorV3.ps1')" },
+    @{ Name="TeslaPro GhostClientFinder"; Desc="Detects Ghost Client traces and modifications";     Category="Other-ClientsDetector"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/TeslaPros/GhostClientFucker/refs/heads/main/GhostClientFucker.ps1')" },
+    @{ Name="CheesyDqrkisFucker";        Desc="Searches for Dqrkis-related traces";                Category="Other-ClientsDetector"; Type="Cmd"; Command="Invoke-Expression (Invoke-RestMethod 'https://raw.githubusercontent.com/cheesecatlol/DQRKIS-FUCKER/refs/heads/main/DqrkisFucker.ps1')" },
+    @{ Name="Praiselily Doomsday Finder"; Desc="Finds Doomsday client artefacts";                   Category="Other-ClientsDetector"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/praiselily/lilith-ps/refs/heads/main/DoomsdayFinder.ps1)" },
+    @{ Name="Zedoon DoomsDay Detector";   Desc="Detects Doomsday client traces";                    Category="Other-ClientsDetector"; Type="Cmd"; Command="Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/zedoonvm1/powershell-scripts/refs/heads/main/DoomsDayDetector.ps1)" },
+    @{ Name="MeowClientFucker";           Desc="Detects known cheat client artefacts";              Category="Other-ClientsDetector"; Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowClientFucker/releases/latest" },
+    @{ Name="MeowDoomsdayFucker";         Desc="Detects Doomsday cheat artefacts";                 Category="Other-ClientsDetector"; Type="GitHub"; URL="https://github.com/MeowTonynoh/MeowDoomsdayFucker/releases/latest" },
 
     @{ Name="PrefetchView";          Desc="Parses prefetch, extracts file info";          Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/PrefetchView/releases/latest" },
     @{ Name="BAMReveal";             Desc="Parses BAM forensic artefact";                 Category="Other-Orbdiff";    Type="GitHub"; URL="https://github.com/Orbdiff/BAMReveal/releases/latest" },
@@ -892,9 +892,9 @@ function Show-SourceCode {
 
 # TABS
 
-$Categories = @("Mod Analyzer","Clients Detector","Other")
+$Categories = @("Other")
 
-$OtherSubCategories = @("Valyar","Orbdiff","Spokwn","Tonynoh","Praiselily","RedLotus","DetectAC","TeslaPro","Echo","TRSSCommunity","Magnet","Forensics","SystemTools","Analysis","Misc","NirSoft","Zimmerman","Scripts","Others","Dependencies")
+$OtherSubCategories = @("Valyar","ModAnalyzer","ClientsDetector","Orbdiff","Spokwn","Tonynoh","Praiselily","RedLotus","DetectAC","TeslaPro","Echo","TRSSCommunity","Magnet","Forensics","SystemTools","Analysis","Misc","NirSoft","Zimmerman","Scripts","Others","Dependencies")
 
 foreach ($cat in $Categories) {
     $tab = New-Object System.Windows.Controls.TabItem
