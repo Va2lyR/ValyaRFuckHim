@@ -438,7 +438,7 @@ if (-not $script:disclaimerAccepted) { exit }
                                             <Border x:Name="tb" Background="Transparent" CornerRadius="6" Margin="2,3" Padding="14,7">
                                                 <ContentPresenter ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </Border>
-                                                <ControlTemplate.Triggers>
+                                            <ControlTemplate.Triggers>
                                                 <Trigger Property="IsSelected" Value="True">
                                                     <Setter TargetName="tb" Property="Background" Value="#E53935"/>
                                                     <Setter Property="Foreground" Value="#FFFFFF"/>
