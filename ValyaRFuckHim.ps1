@@ -427,19 +427,6 @@ if (-not $script:disclaimerAccepted) { exit }
                 <Border Grid.Column="0" Margin="12,8,6,8">
                     <TabControl x:Name="ToolsTab" Background="Transparent" BorderThickness="0" Padding="2">
                         <TabControl.Resources>
-                            <Style TargetType="TabPanel">
-                                <Setter Property="IsItemsHost" Value="True"/>
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="TabPanel">
-                                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Background="Transparent">
-                                                <StackPanel Orientation="Horizontal" IsItemsHost="True"/>
-                                            </ScrollViewer>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
                             <Style TargetType="TabItem">
                                 <Setter Property="Foreground" Value="#444444"/>
                                 <Setter Property="FontSize" Value="11"/>
@@ -451,11 +438,10 @@ if (-not $script:disclaimerAccepted) { exit }
                                             <Border x:Name="tb" Background="Transparent" CornerRadius="6" Margin="2,3" Padding="14,7">
                                                 <ContentPresenter ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </Border>
-                                            <ControlTemplate.Triggers>
+                                                <ControlTemplate.Triggers>
                                                 <Trigger Property="IsSelected" Value="True">
                                                     <Setter TargetName="tb" Property="Background" Value="#E53935"/>
                                                     <Setter Property="Foreground" Value="#FFFFFF"/>
-                                                    <Setter Property="FontWeight" Value="SemiBold"/>
                                                 </Trigger>
                                                 <MultiTrigger>
                                                     <MultiTrigger.Conditions>
