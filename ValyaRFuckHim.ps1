@@ -425,39 +425,20 @@ if (-not $script:disclaimerAccepted) { exit }
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" Margin="12,8,6,8">
-                    <TabControl x:Name="ToolsTab" Background="Transparent" BorderThickness="0" Padding="2">
-                        <TabControl.Resources>
-                            <Style TargetType="TabItem">
-                                <Setter Property="Foreground" Value="#444444"/>
-                                <Setter Property="FontSize" Value="11"/>
-                                <Setter Property="Padding" Value="14,6"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="TabItem">
-                                            <Border x:Name="tb" Background="Transparent" CornerRadius="6" Margin="2,3" Padding="14,7">
-                                                <ContentPresenter ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                            </Border>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsSelected" Value="True">
-                                                    <Setter TargetName="tb" Property="Background" Value="#E53935"/>
-                                                    <Setter Property="Foreground" Value="#FFFFFF"/>
-                                                </Trigger>
-                                                <MultiTrigger>
-                                                    <MultiTrigger.Conditions>
-                                                        <Condition Property="IsMouseOver" Value="True"/>
-                                                        <Condition Property="IsSelected" Value="False"/>
-                                                    </MultiTrigger.Conditions>
-                                                    <Setter TargetName="tb" Property="Background" Value="#161616"/>
-                                                    <Setter Property="Foreground" Value="#AAAAAA"/>
-                                                </MultiTrigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </TabControl.Resources>
-                    </TabControl>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <WrapPanel x:Name="CatBar" Grid.Row="0" Margin="2,0,2,6"/>
+                        <TabControl x:Name="ToolsTab" Grid.Row="1" Background="Transparent" BorderThickness="0" Padding="2">
+                            <TabControl.Resources>
+                                <Style TargetType="TabItem">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Style>
+                            </TabControl.Resources>
+                        </TabControl>
+                    </Grid>
                 </Border>
 
                 <Border Grid.Column="1" Background="#0C0C0C" BorderBrush="{StaticResource Border}" BorderThickness="1,0,0,0">
@@ -566,6 +547,7 @@ $StatusSub     = $window.FindName("StatusSub")
 $StatusBadge   = $window.FindName("StatusBadgeText")
 $LogBox        = $window.FindName("LogBox")
 $ToolsTab      = $window.FindName("ToolsTab")
+$CatBar        = $window.FindName("CatBar")
 $OpenFolderBtn = $window.FindName("OpenFolderBtn")
 $ClearCacheBtn = $window.FindName("ClearCacheBtn")
 $OpenCmdBtn    = $window.FindName("OpenCmdBtn")
@@ -893,9 +875,12 @@ function Show-SourceCode {
 
 $AllCategories = @("Valyar","ModAnalyzer","ClientsDetector","Orbdiff","Spokwn","Tonynoh","Praiselily","RedLotus","DetectAC","TeslaPro","Echo","TRSSCommunity","Magnet","Forensics","SystemTools","Analysis","Misc","NirSoft","Zimmerman","Scripts","Others","Dependencies")
 
+$script:usedCats = @()
+
 foreach ($cat in $AllCategories) {
     $catTools = $ToolData | Where-Object { $_.Category -eq $cat }
     if (-not $catTools) { continue }
+    $script:usedCats += $cat
 
     $tab = New-Object System.Windows.Controls.TabItem
     $tab.Header = $cat
@@ -1133,6 +1118,99 @@ foreach ($cat in $AllCategories) {
     $tab.Content = $scroll
     $ToolsTab.Items.Add($tab) | Out-Null
 }
+
+
+# CATEGORY BAR (fixed buttons - they never move)
+$script:toolsTabRef = $ToolsTab
+$script:catButtons = @()
+$script:activeCatIdx = 0
+foreach ($c in $script:usedCats) {
+    $cnt = @($ToolData | Where-Object { $_.Category -eq $c }).Count
+    $pill = New-Object System.Windows.Controls.Button
+    $pill.Content = "$c ($cnt)"
+    $pill.FontSize = 10
+    $pill.Height = 28
+    $pill.Padding = "12,0"
+    $pill.Margin = "3,2"
+    $pill.Cursor = "Hand"
+    $pill.Foreground = "#777777"
+    $pill.Tag = $script:catButtons.Count
+
+    $pBorder = [System.Windows.FrameworkElementFactory]::new([System.Windows.Controls.Border])
+    $pBorder.SetValue([System.Windows.Controls.Control]::BackgroundProperty, [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#131313")))
+    $pBorder.SetValue([System.Windows.Controls.Border]::CornerRadiusProperty, [System.Windows.CornerRadius]::new(6))
+    $pBorder.SetValue([System.Windows.Controls.Border]::BorderBrushProperty, [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#222222")))
+    $pBorder.SetValue([System.Windows.Controls.Border]::BorderThicknessProperty, [System.Windows.Thickness]::new(1))
+    $pContent = [System.Windows.FrameworkElementFactory]::new([System.Windows.Controls.ContentPresenter])
+    $pContent.SetValue([System.Windows.Controls.ContentPresenter]::HorizontalAlignmentProperty, [System.Windows.HorizontalAlignment]::Center)
+    $pContent.SetValue([System.Windows.Controls.ContentPresenter]::VerticalAlignmentProperty, [System.Windows.VerticalAlignment]::Center)
+    $pBorder.AppendChild($pContent)
+    $pTemplate = [System.Windows.Controls.ControlTemplate]::new([System.Windows.Controls.Button])
+    $pTemplate.VisualTree = $pBorder
+    $pill.Template = $pTemplate
+
+    $pill.Add_Loaded({
+        $lb = $_.Source
+        if ($null -eq $lb.Tag) { $lb = $this }
+        if ([Windows.Media.VisualTreeHelper]::GetChildrenCount($lb) -gt 0) {
+            $lbrd = [Windows.Media.VisualTreeHelper]::GetChild($lb, 0)
+            if ($lbrd -and $lbrd -is [System.Windows.Controls.Border] -and $lb.Tag -eq $script:activeCatIdx) {
+                $lb.Foreground = [Windows.Media.Brushes]::White
+                $lbrd.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
+                $lbrd.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
+            }
+        }
+    })
+    $pill.Add_MouseEnter({
+        $hb = $_.Source
+        if ($null -eq $hb.Tag) { $hb = $this }
+        if ($hb.Tag -ne $script:activeCatIdx -and [Windows.Media.VisualTreeHelper]::GetChildrenCount($hb) -gt 0) {
+            $hbrd = [Windows.Media.VisualTreeHelper]::GetChild($hb, 0)
+            if ($hbrd -and $hbrd -is [System.Windows.Controls.Border]) {
+                $hbrd.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#1C1C1C"))
+            }
+        }
+    })
+    $pill.Add_MouseLeave({
+        $hb = $_.Source
+        if ($null -eq $hb.Tag) { $hb = $this }
+        if ($hb.Tag -ne $script:activeCatIdx -and [Windows.Media.VisualTreeHelper]::GetChildrenCount($hb) -gt 0) {
+            $hbrd = [Windows.Media.VisualTreeHelper]::GetChild($hb, 0)
+            if ($hbrd -and $hbrd -is [System.Windows.Controls.Border]) {
+                $hbrd.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#131313"))
+            }
+        }
+    })
+    $pill.Add_Click({
+        $clicked = $_.Source
+        if ($null -eq $clicked.Tag) { $clicked = $this }
+        $script:toolsTabRef.SelectedIndex = $clicked.Tag
+        $script:activeCatIdx = $clicked.Tag
+        foreach ($b in $script:catButtons) {
+            $cbrd = $null
+            if ([Windows.Media.VisualTreeHelper]::GetChildrenCount($b) -gt 0) {
+                $cbrd = [Windows.Media.VisualTreeHelper]::GetChild($b, 0)
+            }
+            if ($b.Tag -eq $script:activeCatIdx) {
+                $b.Foreground = [Windows.Media.Brushes]::White
+                if ($cbrd) {
+                    $cbrd.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
+                    $cbrd.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
+                }
+            } else {
+                $b.Foreground = "#777777"
+                if ($cbrd) {
+                    $cbrd.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#131313"))
+                    $cbrd.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#222222"))
+                }
+            }
+        }
+    })
+
+    $script:catButtons += $pill
+    $CatBar.Children.Add($pill) | Out-Null
+}
+if ($ToolsTab.Items.Count -gt 0) { $ToolsTab.SelectedIndex = 0 }
 
 
 # EVENTS
