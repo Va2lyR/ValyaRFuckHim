@@ -145,7 +145,8 @@ $ToolData = @(
     @{ Name="Java Library Analyzer"; Desc="Lafferr Java Library Analyzer";                       Category="Others"; Type="GitHub"; URL="https://github.com/Lafferrr/SSTools/releases/latest" },
     @{ Name="PJ Cheat Scanner Lite"; Desc="String Checker by gorbgallin";                        Category="Others"; Type="GitHub"; URL="https://github.com/gorbgallin/Pj-sCheatScannerLite/releases/latest" },
 
-    @{ Name="JarAnalyzer";           Desc="JAR file analyzer and decompiler";                     Category="Valyar"; Type="Web";    URL="https://github.com/Va2lyR/ValyaRFuckHim/releases/download/ss/JarAnalyzer.exe" },
+    @{ Name="ValyaR Jar Analyzer";   Desc="JAR file analyzer and decompiler";                       Category="Valyar"; Type="Web";    URL="https://github.com/Va2lyR/ValyaRJarAnalyzer/releases/download/2.3.1/ValyaRJarAnalyzer-2.3.1.exe" },
+    @{ Name="ValyaR Mod Analyzer";   Desc="Analyzes Minecraft mods for cheat indicators";          Category="Valyar"; Type="Web";    URL="https://github.com/Va2lyR/ValyaRModAnalyzer/releases/download/v1.0/ValyaRModAnalyzer.exe" },
 
     @{ Name="NET 8.0";               Desc="Microsoft .NET 8 SDK runtime";                        Category="Dependencies"; Type="Web"; URL="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.423-windows-x64-installer" },
 
