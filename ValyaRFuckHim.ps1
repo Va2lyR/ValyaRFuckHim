@@ -314,7 +314,7 @@ if (-not $script:disclaimerAccepted) { exit }
 # MAIN WINDOW XAML
 
 [xml]$xaml = @"
-<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="ValyaRFuckHim" Width="1200" Height="750" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent" FontFamily="Segoe UI">
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="ValyaRFuckHim" Width="1200" Height="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent" FontFamily="Segoe UI">
     <Window.Resources>
         <SolidColorBrush x:Key="Bg" Color="#0A0A0A"/>
         <SolidColorBrush x:Key="Surface" Color="#0F0F0F"/>
@@ -506,32 +506,26 @@ if (-not $script:disclaimerAccepted) { exit }
                                         <TextBlock Text="GitHub: Va2lyR" FontSize="8" Foreground="#444444" Margin="0,1,0,0"/>
                                     </StackPanel>
                                 </Border>
-                                <Border Background="{StaticResource Surface}" Margin="8,2" Padding="10,6" CornerRadius="8">
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="100"/>
-                                        </Grid.RowDefinitions>
-                                        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,4">
-                                            <Border Background="#E53935" Width="4" Height="4" CornerRadius="2" Margin="0,0,6,0" VerticalAlignment="Center"/>
-                                            <TextBlock Text="LOG" FontSize="7" FontWeight="SemiBold" Foreground="#333333" FontFamily="Consolas" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                        <TextBox x:Name="LogBox" Grid.Row="1" Background="#080808" Foreground="#E53935" BorderBrush="#141414" BorderThickness="1" FontFamily="Consolas" FontSize="8" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Padding="6,4" VerticalAlignment="Stretch"/>
-                                    </Grid>
-                                </Border>
                             </StackPanel>
                         </ScrollViewer>
                     </Grid>
                 </Border>
             </Grid>
 
-            <Border Grid.Row="2" Background="#0C0C0C" BorderBrush="{StaticResource Border}" BorderThickness="0,1,0,0" Padding="14,4">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <Border Background="#E53935" Width="4" Height="4" CornerRadius="2" Margin="0,0,6,0" VerticalAlignment="Center"/>
-                    <TextBlock Text="VALYAR" FontSize="8" FontWeight="SemiBold" Foreground="#444444" FontFamily="Consolas" VerticalAlignment="Center"/>
-                    <Border Background="#181818" Width="1" Height="10" Margin="10,0" VerticalAlignment="Center"/>
-                    <TextBlock Text="v1.0" FontSize="8" Foreground="#2A2A2A" FontFamily="Consolas" VerticalAlignment="Center"/>
-                </StackPanel>
+            <Border Grid.Row="2" Background="#0C0C0C" BorderBrush="{StaticResource Border}" BorderThickness="0,1,0,0" Padding="14,8">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="110"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,6">
+                        <Border Background="#E53935" Width="6" Height="6" CornerRadius="3" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="LOG" FontSize="10" FontWeight="SemiBold" Foreground="#888888" FontFamily="Consolas" VerticalAlignment="Center"/>
+                        <Border Background="#1A1A1A" Width="1" Height="12" Margin="10,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="VALYAR v1.0" FontSize="8" Foreground="#333333" FontFamily="Consolas" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBox x:Name="LogBox" Grid.Row="1" Background="#080808" Foreground="#E53935" BorderBrush="#1A1A1A" BorderThickness="1" FontFamily="Consolas" FontSize="10" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Padding="8,6"/>
+                </Grid>
             </Border>
         </Grid>
     </Border>
