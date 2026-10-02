@@ -416,10 +416,21 @@ if (-not $script:disclaimerAccepted) { exit }
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <WrapPanel x:Name="CatBar" Grid.Row="0" Margin="2,0,2,6"/>
-                        <TabControl x:Name="ToolsTab" Grid.Row="1" Background="Transparent" BorderThickness="0" Padding="2">
+                        <Border Grid.Row="0" Background="#0F0F0F" BorderBrush="#1A1A1A" BorderThickness="1" CornerRadius="6" Margin="2,0,2,6" Padding="10,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text=">" Foreground="#E53935" FontSize="12" FontWeight="Bold" FontFamily="Consolas" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                <TextBox x:Name="SearchBox" Grid.Column="1" Background="Transparent" Foreground="#CCCCCC" CaretBrush="#E53935" BorderThickness="0" FontFamily="Consolas" FontSize="11" Padding="0,8" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <WrapPanel x:Name="CatBar" Grid.Row="1" Margin="2,0,2,6"/>
+                        <TabControl x:Name="ToolsTab" Grid.Row="2" Background="Transparent" BorderThickness="0" Padding="2">
                             <TabControl.Resources>
                                 <Style TargetType="TabItem">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -468,6 +479,8 @@ if (-not $script:disclaimerAccepted) { exit }
                                         <Button x:Name="OpenFolderBtn" Content="Open Install Folder" Style="{StaticResource SideBtn}"/>
                                         <Button x:Name="ClearCacheBtn" Content="Clear Downloaded Files" Style="{StaticResource SideBtn}"/>
                                         <Button x:Name="OpenCmdBtn" Content="Open Terminal" Style="{StaticResource SideBtn}"/>
+                                        <TextBlock Text="SAVE TO" FontSize="7" FontWeight="SemiBold" Foreground="#333333" FontFamily="Consolas" Margin="0,8,0,2"/>
+                                        <TextBlock x:Name="InstPathText" FontSize="8" Foreground="#555555" FontFamily="Consolas" TextWrapping="Wrap"/>
                                     </StackPanel>
                                 </Border>
                                 <Border Background="{StaticResource Surface}" Margin="8,2" Padding="10,6" CornerRadius="8">
@@ -544,6 +557,27 @@ $BtnControlFolders = $window.FindName("BtnControlFolders")
 $BtnWinHistory = $window.FindName("BtnWinHistory")
 $BtnIndexedLoc = $window.FindName("BtnIndexedLoc")
 $LogoImage     = $window.FindName("LogoImage")
+$SearchBox     = $window.FindName("SearchBox")
+$InstPathText  = $window.FindName("InstPathText")
+
+if ($InstPathText) { $InstPathText.Text = $installDir }
+
+# Search placeholder
+$script:searchHint = "Search tools..."
+$SearchBox.Text = $script:searchHint
+$SearchBox.Foreground = "#333333"
+$SearchBox.Add_GotFocus({
+    if ($SearchBox.Text -eq $script:searchHint) {
+        $SearchBox.Text = ""
+        $SearchBox.Foreground = "#CCCCCC"
+    }
+})
+$SearchBox.Add_LostFocus({
+    if ([string]::IsNullOrWhiteSpace($SearchBox.Text)) {
+        $SearchBox.Text = $script:searchHint
+        $SearchBox.Foreground = "#333333"
+    }
+})
 
 # Load logo image - try local first, then download from GitHub
 $logoLoaded = $false
@@ -875,14 +909,24 @@ foreach ($cat in $AllCategories) {
     foreach ($tool in $catTools) {
         $t = $tool
         $btn = New-Object System.Windows.Controls.Button
-        $btn.Width = 224; $btn.Height = 86; $btn.FontSize = 12; $btn.Margin = "6"; $btn.Cursor = "Hand"; $btn.Foreground = "#E0E0E0"
+        $btn.Width = 224; $btn.Height = 100; $btn.FontSize = 12; $btn.Margin = "6"; $btn.Cursor = "Hand"; $btn.Foreground = "#E0E0E0"
 
         $btnStack = New-Object System.Windows.Controls.StackPanel
         $btnStack.Margin = "14,10"
+        $typeBlock = New-Object System.Windows.Controls.TextBlock
+        $typeBlock.FontSize = 8; $typeBlock.FontFamily = "Consolas"; $typeBlock.Margin = "0,0,0,4"
+        switch ($t.Type) {
+            "Cmd"    { $typeBlock.Text = "SCRIPT";   $typeBlock.Foreground = "#E53935" }
+            "GitHub" { $typeBlock.Text = "DOWNLOAD"; $typeBlock.Foreground = "#4CAF50" }
+            "Web"    { $typeBlock.Text = "WEB FILE"; $typeBlock.Foreground = "#5AA9FF" }
+            "Link"   { $typeBlock.Text = "LINK";     $typeBlock.Foreground = "#FFA726" }
+            default  { $typeBlock.Text = $t.Type.ToUpper(); $typeBlock.Foreground = "#888888" }
+        }
         $nameBlock = New-Object System.Windows.Controls.TextBlock
         $nameBlock.Text = $t.Name; $nameBlock.FontSize = 12; $nameBlock.FontWeight = "SemiBold"; $nameBlock.TextWrapping = "Wrap"; $nameBlock.Foreground = "#FFFFFF"
         $descBlock = New-Object System.Windows.Controls.TextBlock
         $descBlock.Text = $t.Desc; $descBlock.FontSize = 10; $descBlock.Opacity = 0.4; $descBlock.TextWrapping = "Wrap"; $descBlock.Margin = "0,4,0,0"; $descBlock.Foreground = "#999999"
+        $btnStack.Children.Add($typeBlock) | Out-Null
         $btnStack.Children.Add($nameBlock) | Out-Null
         $btnStack.Children.Add($descBlock) | Out-Null
 
@@ -963,7 +1007,7 @@ foreach ($cat in $AllCategories) {
 
         $btn.Add_Click({
             $clickedBtn = $_.Source
-            $tName = ($clickedBtn.Content.Children[0]).Text
+                    $tName = ($clickedBtn.Content.Children[1]).Text
             $tData = $ToolData | Where-Object { $_.Name -eq $tName } | Select-Object -First 1
             $clickedBtn.IsEnabled = $false
 
@@ -1194,6 +1238,62 @@ foreach ($c in $script:usedCats) {
 }
 if ($ToolsTab.Items.Count -gt 0) { $ToolsTab.SelectedIndex = 0 }
 
+function Update-CatPills {
+    foreach ($b in $script:catButtons) {
+        $cbrd = $null
+        if ([Windows.Media.VisualTreeHelper]::GetChildrenCount($b) -gt 0) {
+            $cbrd = [Windows.Media.VisualTreeHelper]::GetChild($b, 0)
+        }
+        if ($b.Tag -eq $script:activeCatIdx) {
+            $b.Foreground = [Windows.Media.Brushes]::White
+            if ($cbrd) {
+                $cbrd.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
+                $cbrd.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#E53935"))
+            }
+        } else {
+            $b.Foreground = "#777777"
+            if ($cbrd) {
+                $cbrd.Background = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#131313"))
+                $cbrd.BorderBrush = [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString("#222222"))
+            }
+        }
+    }
+}
+
+# Live search across all categories
+$SearchBox.Add_TextChanged({
+    $q = $SearchBox.Text.Trim().ToLower()
+    if ($q -eq $script:searchHint.ToLower()) { $q = "" }
+    $firstMatch = -1
+    $matchCount = 0
+    for ($ti = 0; $ti -lt $script:toolsTabRef.Items.Count; $ti++) {
+        $wp = $script:toolsTabRef.Items[$ti].Content.Content
+        $visCount = 0
+        foreach ($btn in $wp.Children) {
+            if ($btn -is [System.Windows.Controls.Button] -and $btn.Content -is [System.Windows.Controls.StackPanel] -and $btn.Content.Children.Count -ge 3) {
+                $nm = [string]$btn.Content.Children[1].Text
+                $ds = [string]$btn.Content.Children[2].Text
+                if ($q -eq "" -or $nm.ToLower().Contains($q) -or $ds.ToLower().Contains($q)) {
+                    $btn.Visibility = "Visible"; $visCount++; $matchCount++
+                } else {
+                    $btn.Visibility = "Collapsed"
+                }
+            }
+        }
+        if ($firstMatch -eq -1 -and $visCount -gt 0) { $firstMatch = $ti }
+    }
+    if ($firstMatch -ge 0) {
+        $script:toolsTabRef.SelectedIndex = $firstMatch
+        $script:activeCatIdx = $firstMatch
+        Update-CatPills
+    }
+    if ($q -ne "") {
+        Set-Status "Search" "$matchCount result(s) for '$q'." "IDLE"
+    } else {
+        Set-Status "Ready" "Select a tool to launch or download it." "IDLE"
+    }
+})
+
 
 # EVENTS
 
@@ -1277,6 +1377,6 @@ $BtnIndexedLoc.Add_Click({
 })
 
 Write-Log "Files saved to: $installDir"
-Set-Status "Ready" "Select a tool to launch or download it." "IDLE"
+Set-Status "Ready" "$($ToolData.Count) tools in $($script:usedCats.Count) categories - search or pick one." "IDLE"
 
 $window.ShowDialog() | Out-Null
